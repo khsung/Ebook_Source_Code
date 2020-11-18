@@ -1,11 +1,12 @@
-/*
-#include <stdio.h>
+/*#include <stdio.h>
+
 #define MAX_STACK_SIZE 100
 
 typedef struct {                      //스택 구조체 선언
 	int stack[MAX_STACK_SIZE];
 	int top;
 }STACK;
+
 void init(STACK* s) {                //스택 초기화
 	s->top = -1;
 }
@@ -35,7 +36,6 @@ void pop(STACK* s) {                   //스택 원소 제거
 		printf("공백상태오류\n");
 	}
 	else {
-		printf("%d\n", s->stack[s->top]);
 		s->top--;
 	}
 }
@@ -44,13 +44,14 @@ void peek(STACK* s) {                //스택 상단 원소 출력
 		printf("공백상태\n");
 	else
 	{
-		printf("%d\n", s->stack[s->top]);
+		printf("상단원소 : %d\n", s->stack[s->top]);
 	}
 }
 void printstack(STACK* s) {           //스택 출력
 	if (s->top == -1)
 		printf("공백상태\n");
 	else {
+		printf("스택 : ");
 		for (int i = 0; i <= s->top; i++) {
 			printf("%d ", s->stack[i]);
 		}
@@ -63,9 +64,11 @@ int main() {
 	push(&teststack, 10);
 	peek(&teststack);
 	push(&teststack, 20);
+	push(&teststack, 30);
 	printstack(&teststack);
-	pop(&teststack);
 	peek(&teststack);
+	pop(&teststack);
+	printstack(&teststack);
 }
 */
 
@@ -114,7 +117,7 @@ void dequeue(QUEUE* q) {       //큐 원소제거
 	if (isempty(q) == 1)
 		printf("공백 큐\n");
 	else {
-		printf("%d\n", q->queue[q->front]);
+		printf("Front 원소 제거 : %d\n", q->queue[q->front]);
 		q->front++;
 	}
 }
@@ -122,6 +125,7 @@ void printqueue(QUEUE* q) {      //큐 출력
 	if (isempty(q) == 1)
 		printf("공백 큐\n");
 	else {
+		printf("큐 : ");
 		for (int i = q->front; i < q->rear; i++) {
 			printf("%d ", q->queue[i]);
 		}
@@ -137,3 +141,4 @@ int main() {
 	dequeue(&testqueue);
 }
 */
+
