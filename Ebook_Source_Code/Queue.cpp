@@ -1,7 +1,7 @@
 /*
 #include <stdio.h>
 #define MAX_QUEUE_SIZE 100
-
+ 
 typedef struct {              //큐 구조체 선언
 	int front;
 	int rear;
