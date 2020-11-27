@@ -1,4 +1,4 @@
-
+/*
 #include<stdio.h>
 #include<malloc.h>
 
@@ -64,4 +64,4 @@ int main(void) {
 	deletenode(head, 30);
 	return 0;
 }
-
+*/
