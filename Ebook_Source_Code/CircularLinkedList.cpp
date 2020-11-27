@@ -1,4 +1,4 @@
-
+/*
 #include <stdio.h>
 #include <malloc.h>
 
@@ -94,3 +94,4 @@ int main(void) {
 	printnode(head);
 	return 0;
 }
+*/
