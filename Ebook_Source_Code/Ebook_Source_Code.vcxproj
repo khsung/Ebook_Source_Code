@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CircularLinkedList.cpp" />
+    <ClCompile Include="Deque.cpp" />
     <ClCompile Include="DoubleLinkedList.cpp" />
     <ClCompile Include="SingleLinkedList.cpp" />
     <ClCompile Include="Queue.cpp" />
