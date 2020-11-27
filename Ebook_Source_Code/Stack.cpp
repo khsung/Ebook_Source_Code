@@ -1,6 +1,6 @@
 /*
 #include <stdio.h>
-
+ 
 #define MAX_STACK_SIZE 100
 
 typedef struct {                      //스택 구조체 선언
