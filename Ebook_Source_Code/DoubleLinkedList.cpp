@@ -1,9 +1,10 @@
-
+/*
 #include<stdio.h>
 #include<malloc.h>
 
-typedef struct NODE{         //노드 구조체 선언
+typedef struct NODE {         //노드 구조체 선언
 	int data;
+	struct NODE* prev;
 	struct NODE* next;
 }NODE;
 
@@ -15,25 +16,21 @@ void addnode(NODE* n, int d) {       //뒤에 노드 추가
 		n = n->next;
 	}
 	n->next = temp;
+	temp->prev = n;
 }
 
 void deletenode(NODE* n, int d) {     //원하는 노드 삭제
 	NODE* delnode;
-	if (n->next == NULL) {
-		printf("공백 리스트\n");
-	}
-	else {
-		while (n->next != NULL) {
-			if ((n->next)->data == d) {
-				delnode = n->next;
-				n->next = n->next->next;
-				free(delnode);
-				return;
-			}
-			n = n->next;
+	while (n->next != NULL) {
+		if ((n->next)->data == d) {
+			delnode = n->next;
+			n->next = n->next->next;
+			free(delnode);
+			return;
 		}
-		printf("해당 노드 없음\n");
+		n = n->next;
 	}
+	printf("해당 노드 없음\n");
 }
 
 void printnode(NODE* n) {     //리스트 출력
@@ -55,7 +52,7 @@ int main(void) {
 	NODE* head = (NODE*)malloc(sizeof(NODE));
 	head->data = NULL;
 	head->next = NULL;
-	deletenode(head, 10);
+	printnode(head);
 	addnode(head, 10);
 	addnode(head, 20);
 	printnode(head);
@@ -64,4 +61,4 @@ int main(void) {
 	deletenode(head, 30);
 	return 0;
 }
-
+*/
