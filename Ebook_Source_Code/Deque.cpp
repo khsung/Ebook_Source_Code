@@ -1,3 +1,4 @@
+/*
 #include <stdio.h>
 #include <malloc.h>
 
@@ -46,22 +47,4 @@ int main() {
 	init(rear);
 	front->next = rear;
 }
-
-//#include <stdio.h>
-//#include <malloc.h>
-//
-//typedef struct listNode listPointer;
-//typedef struct listNode {
-//	int data;
-//	listPointer* link;
-//};
-//listPointer* concatenate(listPointer* ptr1, listPointer* ptr2) {
-//    listPointer* temp;
-//    if (!ptr1)
-//        return ptr2;
-//    if (!ptr2)
-//        return ptr1;
-//    for (temp = ptr1; temp->link; temp = temp->link); // temp를 ptr1의 끝으로 이동
-//    temp->link = ptr2; //ptr2를 연결함
-//    return ptr1;
-//}
+*/

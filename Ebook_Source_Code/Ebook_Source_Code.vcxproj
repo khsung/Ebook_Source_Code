@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="CircularLinkedList.cpp" />
     <ClCompile Include="Deque.cpp" />
     <ClCompile Include="DoubleLinkedList.cpp" />
