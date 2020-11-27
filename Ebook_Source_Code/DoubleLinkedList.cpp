@@ -21,16 +21,30 @@ void addnode(NODE* n, int d) {       //뒤에 노드 추가
 
 void deletenode(NODE* n, int d) {     //원하는 노드 삭제
 	NODE* delnode;
-	while (n->next != NULL) {
-		if ((n->next)->data == d) {
-			delnode = n->next;
-			n->next = n->next->next;
-			free(delnode);
-			return;
-		}
-		n = n->next;
+	if (n->next == NULL) {
+		printf("공백 리스트\n");
 	}
-	printf("해당 노드 없음\n");
+	else {
+		while (n->next != NULL) {
+			if ((n->next)->data == d) {
+				if (n->next->next == NULL) {
+					delnode = n->next;
+					n->next = NULL;
+					free(delnode);
+					return;
+				}
+				else {
+					delnode = n->next;
+					n->next = n->next->next;
+					n->next->prev = n;
+					free(delnode);
+					return;
+				}				
+			}
+			n = n->next;
+		}
+		printf("해당 노드 없음\n");
+	}
 }
 
 void printnode(NODE* n) {     //리스트 출력
@@ -38,10 +52,9 @@ void printnode(NODE* n) {     //리스트 출력
 		printf("공백 리스트\n");
 	}
 	else {
-		printf("단일 연결 리스트 = ");
-		n = n->next;
-		while (n != NULL) {
-			printf("%d  ", n->data);
+		printf("이중 연결 리스트 = ");
+		while (n->next != NULL) {
+			printf("%d  ", n->next->data);
 			n = n->next;
 		}
 		printf("\n");
@@ -51,14 +64,19 @@ void printnode(NODE* n) {     //리스트 출력
 int main(void) {
 	NODE* head = (NODE*)malloc(sizeof(NODE));
 	head->data = NULL;
-	head->next = NULL;
+	head->prev=head->next = NULL;
 	printnode(head);
 	addnode(head, 10);
 	addnode(head, 20);
+	addnode(head, 30);
 	printnode(head);
+	deletenode(head, 20);
+	printnode(head);
+	deletenode(head, 20);
 	deletenode(head, 10);
 	printnode(head);
 	deletenode(head, 30);
+	printnode(head);
 	return 0;
 }
 */
