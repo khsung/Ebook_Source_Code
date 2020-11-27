@@ -79,6 +79,7 @@ void printnode(NODE* n) {     //원형 리스트 출력
 		printf("  다음 노드 -> %d\n",curr->next->data);
 	}
 }
+
 int main(void) {
 	NODE* head = (NODE*)malloc(sizeof(NODE));
 	head->data = NULL;
