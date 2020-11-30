@@ -1,4 +1,4 @@
-
+/*
 #include<stdio.h>
 
 void main() {
@@ -26,4 +26,5 @@ void main() {
 		printf("%d   ", array[i]);
 	}
 }
+*/
 
