@@ -1,8 +1,8 @@
-/*
+
 #include <stdio.h>
 #include <malloc.h>
 
-typedef struct {              //데크 구조체 선언
+typedef struct {              //노드 구조체 선언
 	int data;
 	struct NODE* prev;
 	struct NODE* next;
@@ -14,37 +14,33 @@ typedef struct {              //데크 구조체 선언
 }DEQUE;
 
 void init(DEQUE* d) {           //큐 초기화
-	NODE* Front = (NODE*)malloc(sizeof(NODE));
-	NODE* Rear = (NODE*)malloc(sizeof(NODE));
-	Front->data = NULL;
-	Front->next = Front->prev = NULL;
-	Rear->data = NULL;
-	Rear->next = Rear->prev = NULL;
-	d->front = Front;
-	d->rear = Rear;
-	d->front->next = d->rear->prev;
-	d->rear->prev = d->front;
+	d->front = d->rear = NULL;
 }
 
-
-int isempty(DEQUE* f, DEQUE* r) {       //큐 공백상태 체크
-	if (f->next == r)
+int isempty(DEQUE* d) {       //큐 공백상태 체크
+	if (d->front == NULL)
 		return 1;
 	else
 		return 0;
 }
 
-int main() {
-	DEQUE* head = (DEQUE*)malloc(sizeof(DEQUE));
-	head->data = NULL;
-	head->next = NULL;
+void enqueuef(DEQUE* d, int data) {
+	NODE* temp = (NODE*)malloc(sizeof(NODE));
+	temp->data = data;
+	if (d->front == NULL) {
+		d->front = temp;
+		d->rear = temp;
+		temp->next = temp->prev = NULL;
+	}
+	else {
+		temp->next = d->front->next;
+		d->front= temp;
+		printf("%d", d->front->next->data);
+	}
 }
 
 int main() {
-	DEQUE* front = (DEQUE*)malloc(sizeof(DEQUE));
-	DEQUE* rear = (DEQUE*)malloc(sizeof(DEQUE));
-	init(front);
-	init(rear);
-	front->next = rear;
+	DEQUE* deque = (DEQUE*)malloc(sizeof(DEQUE));
+	init(deque);
+	enqueuef(deque, 1);
 }
-*/

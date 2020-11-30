@@ -37,7 +37,7 @@
     <ProjectGuid>{A90F9E59-726A-4269-ABED-F3565F11E4EB}</ProjectGuid>
     <RootNamespace>EbookSourceCode</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Ebook_Source_C_Code</ProjectName>
+    <ProjectName>Ebook_Source_Code</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
