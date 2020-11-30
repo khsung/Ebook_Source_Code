@@ -10,7 +10,7 @@ void printarray(int *array, int size) {     //배열 출력
 
 int main() {
 	int array[5] = { 2,3,1,5,4 };
-	int temp,arraysize=5;
+	int temp, arraysize = sizeof(array) / sizeof(int);
 	printf("정렬 전 배열 : ");
 	printarray(array, arraysize);
 	printf("\n정렬 과정\n");
@@ -28,6 +28,6 @@ int main() {
 	printarray(array, arraysize);
 	printf("\n");
 }
-*/
 
+*/
 
