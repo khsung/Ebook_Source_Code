@@ -23,7 +23,7 @@
     <ClCompile Include="CircularLinkedList.cpp" />
     <ClCompile Include="Deque.cpp" />
     <ClCompile Include="DoubleLinkedList.cpp" />
-    <ClCompile Include="SelectionSort.cpp" />
+    <ClCompile Include="InsertionSort.cpp" />
     <ClCompile Include="SingleLinkedList.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="Stack.cpp" />
