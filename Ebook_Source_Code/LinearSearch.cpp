@@ -1,4 +1,4 @@
-
+/*
 #include<stdio.h>
 
 int main() {
@@ -15,4 +15,4 @@ int main() {
 		printf("해당 원소 없음\n");
 	}
 }
-
+*/
