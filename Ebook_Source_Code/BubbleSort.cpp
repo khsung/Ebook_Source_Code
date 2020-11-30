@@ -1,8 +1,8 @@
 /*
 #include<stdio.h>
 
-void printarray(int *array) {     //배열 출력
-	for (int i = 0; i <= sizeof(array); i++) {
+void printarray(int *array, int size) {     //배열 출력
+	for (int i = 0; i < size; i++) {
 		printf("%d   ", array[i]);
 	}
 	printf("\n");
@@ -10,9 +10,9 @@ void printarray(int *array) {     //배열 출력
 
 int main() {
 	int array[5] = { 2,3,1,5,4 };
-	int temp;
+	int temp,arraysize=5;
 	printf("정렬 전 배열 : ");
-	printarray(array);
+	printarray(array, arraysize);
 	printf("\n정렬 과정\n");
 	for (int i = sizeof(array) / sizeof(int) - 1; i > 0; i--) {
 		for (int j = 0; j < i; j++) {
@@ -21,13 +21,13 @@ int main() {
 				array[j] = array[j + 1];
 				array[j + 1] = temp;
 			}
-			printarray(array);
+			printarray(array, arraysize);
 		}
 	}
 	printf("\n정렬 후 배열 : ");
-	printarray(array);
+	printarray(array, arraysize);
 	printf("\n");
 }
-
 */
+
 
