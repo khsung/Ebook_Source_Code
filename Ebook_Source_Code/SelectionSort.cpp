@@ -1,13 +1,18 @@
 /*
 #include<stdio.h>
 
-void main() {
+void printarray(int array[]) {
+	printf("%d", sizeof(array));
+	for (int i = 0; i <= sizeof(array); i++) {
+		//printf("%d  ", array[i]);
+	}
+}
+
+int main() {
 	int array[5] = { 2,3,1,5,4 };
 	int temp,min;
 	printf("정렬 전 배열 : ");
-	for (int i = 0; i < sizeof(array) / sizeof(int); i++) {
-		printf("%d   ", array[i]);
-	}
+	printarray(array);
 	for (int i = 0; i < sizeof(array) / sizeof(int); i++) {
 		min = i;
 		for (int j = i; j < sizeof(array) / sizeof(int); j++) {
@@ -27,4 +32,3 @@ void main() {
 	}
 }
 */
-
