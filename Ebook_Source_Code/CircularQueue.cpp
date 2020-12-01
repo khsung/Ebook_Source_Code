@@ -55,6 +55,7 @@ void printCqueue(CQUEUE* c) {   //원형 큐 출력
 		printf("공백 원형 큐\n");
 	}
 	else {
+		printf("원형 큐 : ");
 		while (curr != c->rear) {
 			curr = (curr + 1) % MAX_CQUEUE_SIZE;
 			printf("%d  ", c->CQUEUE[curr]);
@@ -86,5 +87,4 @@ int main() {
 	dequeue(&cqueue);
 	printCqueue(&cqueue);
 }
-
 */
