@@ -1,7 +1,7 @@
-
+/*
 #include<stdio.h>
 #include<math.h>
-/*
+
 int main() {
 	int answer = 5;
 	bool check = false;  //원소가 있는지 체크하는 변수
