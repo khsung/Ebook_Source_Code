@@ -29,6 +29,7 @@
     <ClCompile Include="HashSearch.cpp" />
     <ClCompile Include="InsertionSort.cpp" />
     <ClCompile Include="LinearSearch.cpp" />
+    <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="SelectionSort.cpp" />
     <ClCompile Include="SingleLinkedList.cpp" />
     <ClCompile Include="Queue.cpp" />
