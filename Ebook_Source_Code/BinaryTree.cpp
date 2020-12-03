@@ -1,51 +1,53 @@
-
 #include<stdio.h>
 #include<stdlib.h>
 
-typedef struct TNODE{
+typedef struct TNODE {
 	int data;
-	struct TNODE* right;
 	struct TNODE* left;
+	struct TNODE* right;
 }TNODE;
 
-void inittree(TNODE* t, int d) {
-	t->left = t->left = NULL;
-	t->data = d;
-}
-
-void insertnode(TNODE* t, int d) {
-	if (t->data > d) {
-		if (t->left == NULL) {
-			TNODE* temp = (TNODE*)malloc(sizeof(TNODE));
-			temp->left = NULL;
-			temp->right = NULL;
-			temp->data = d;
-			t->left = temp;
-			printf("=====");
-		}
-		else {
-			insertnode(t->left, d);
-		}
+void addnode(TNODE** t,int d) {
+	TNODE* temp = (TNODE*)malloc(sizeof(TNODE));
+	TNODE* curr=*t;
+	temp->data = d;
+	temp->left = NULL;
+	temp->right = NULL;
+	if (curr == NULL) {
+		(*curr) = *temp;
+		printf("루트 완료\n");
 	}
 	else {
-		if (t->right == NULL) {
-			TNODE* temp1 = (TNODE*)malloc(sizeof(TNODE));
-			temp1->left = NULL;
-			temp1->right = NULL;
-			temp1->data = d;
-			t->right = temp1;
-		}
-		else {
-			insertnode(t->right, d);
+		while (true) {
+			if (curr->data > temp->data) {
+				if (curr->left == NULL) {
+					curr->left = temp;
+					printf("왼쪽자식 삽입\n");
+					break;
+				}
+				else {
+					curr = curr->left;
+				}
+			}
+			else {
+				if (curr->right == NULL) {
+					curr->right = temp;
+					printf("오른쪽자식 삽입\n");
+					break;
+				}
+				else {
+					curr = curr->right;
+				}
+			}
 		}
 	}
 }
+
 int main() {
-	TNODE* root = (TNODE*)malloc(sizeof(TNODE));
-	inittree(root,3);
-	insertnode(root, 1);
-	insertnode(root, 5);
-	printf("%d   ", root->data);
-	printf("%d   ", root->left->data);
-	printf("%d   ", root->right->data);
+	TNODE* root= NULL;
+	addnode(&root, 3);
+	addnode(&root, 1);
+	addnode(&root, 5);
+	//printf("%d", root->data);
+	//printf("%s", root->left);
 }
