@@ -34,6 +34,7 @@ int main() {
 	TNODE* root=NULL;
 	//printf("%s", &root);
 	addnode(root);
+	addnode(root);
 	testaddnode(root);
 	//printf("%d", root->data);
 }
