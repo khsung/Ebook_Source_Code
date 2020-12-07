@@ -28,6 +28,10 @@ int isfull(MAXHEAP* h) {      //포화 상태일 때 true 반환
 	}
 }
 
+int heapsize(MAXHEAP* h) {
+	return h->currheapsize;
+}
+
 void swap(int* a, int* b) {     //값 교환
 	int temp;
 	temp = *a;
@@ -57,7 +61,7 @@ void addheap(MAXHEAP* h, int data) {     //원소 값 추가
 	}
 }
 
-int deleteheap(MAXHEAP* h) {      //최대 값 원소 제거
+void deleteheap(MAXHEAP* h) {      //최대 값 원소 제거
 	if (isempty(h)) {
 		printf("공백 힙\n");
 	}
@@ -69,6 +73,7 @@ int deleteheap(MAXHEAP* h) {      //최대 값 원소 제거
 			int curr = 1;
 			int maxvalue;              //원소의 최대 값
 			maxvalue = h->heap[curr];
+			//printf("%d  ", maxvalue);
 			h->heap[curr] = h->heap[h->currheapsize];
 			h->currheapsize--;
 
@@ -82,7 +87,7 @@ int deleteheap(MAXHEAP* h) {      //최대 값 원소 제거
 						curr = 2 * curr;
 					}
 					else {
-						return maxvalue;
+						break;
 					}
 				}
 
@@ -96,7 +101,7 @@ int deleteheap(MAXHEAP* h) {      //최대 값 원소 제거
 							curr = 2 * curr + 1;
 						}
 						else {
-							return maxvalue;
+							break;
 						}
 					}
 
@@ -107,7 +112,7 @@ int deleteheap(MAXHEAP* h) {      //최대 값 원소 제거
 							curr = 2 * curr;
 						}
 						else {
-							return maxvalue;
+							break;
 						}
 					}
 				}
@@ -121,9 +126,16 @@ void printheap(MAXHEAP* h) {
 		printf("공백 힙\n");
 	}
 	else {
-		printf("%d   ",deleteheap(h));
+		int line = 2;
+		for (int i = 1; i <= h->currheapsize; i++) {
+			printf("%d  ", h->heap[i]);
+			if (i == line - 1) {
+				printf("\n");
+				line = 2 * line;
+			}
+		}
 	}
-	//printf("\n");
+	printf("\n");
 }
 
 int main() {
@@ -136,5 +148,17 @@ int main() {
 	addheap(&heap, 9);
 	addheap(&heap, 1);
 	addheap(&heap, 6);
+	printheap(&heap);
+	deleteheap(&heap);
+	printheap(&heap);
+	deleteheap(&heap);
+	printheap(&heap);
+	deleteheap(&heap);
+	printheap(&heap);
+	deleteheap(&heap);
+	printheap(&heap);
+	deleteheap(&heap);
+	printheap(&heap);
+	deleteheap(&heap);
 	printheap(&heap);
 }
