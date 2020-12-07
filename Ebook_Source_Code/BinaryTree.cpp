@@ -8,24 +8,34 @@ typedef struct TNODE {
 	struct TNODE* right;
 }TNODE;
 
-typedef struct TREE {
-	TNODE* root;
-}TREE;
-
-
-void addnode(TREE* r,int d) {
-	TNODE* temp = (TNODE*)malloc(sizeof(TNODE));
-	if (r->root == NULL) {
-		r->root = temp;
+void addnode(TNODE* t) {
+	if (t == NULL) {
+		TNODE* temp = (TNODE*)malloc(sizeof(TNODE));
+		temp->data = 1;
 		temp->left = NULL;
 		temp->right = NULL;
-		temp->data = d;
+		*t = *temp;
+	}
+	else {
+		printf("Not NULL\n");
+	}
+}
+
+void testaddnode(TNODE* t) {
+	if (t == NULL) {
+		printf("NULL\n");
+	}
+	else {
+		printf("Not NULL\n");
 	}
 }
 
 int main() {
-	TREE* root;
-	root->root = NULL;
-
+	TNODE* root=NULL;
+	//printf("%s", &root);
+	addnode(root);
+	addnode(root);
+	testaddnode(root);
+	//printf("%d", root->data);
 }
 */
