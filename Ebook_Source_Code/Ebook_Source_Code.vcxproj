@@ -29,6 +29,7 @@
     <ClCompile Include="DoubleLinkedList.cpp" />
     <ClCompile Include="HashSearch.cpp" />
     <ClCompile Include="Heap.cpp" />
+    <ClCompile Include="HeapSort.cpp" />
     <ClCompile Include="InsertionSort.cpp" />
     <ClCompile Include="LinearSearch.cpp" />
     <ClCompile Include="QuickSort.cpp" />

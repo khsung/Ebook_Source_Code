@@ -66,5 +66,8 @@
     <ClCompile Include="Heap.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="HeapSort.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
