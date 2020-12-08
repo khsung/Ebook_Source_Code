@@ -1,3 +1,4 @@
+/*
 #include<stdio.h>
 #define MAX_HEAP_SIZE 100  //힙 최대 크기
 
@@ -162,3 +163,4 @@ int main() {
 	deleteheap(&heap);
 	printheap(&heap);
 }
+*/
