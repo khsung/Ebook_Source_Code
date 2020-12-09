@@ -17,7 +17,7 @@ void init() {
 }
 
 //부모노드에서 삭제할 자식 노드 연결끊기
-void parentconnection(TNODE* child) {
+void delparentconnect(TNODE* child) {
 	if (parent->right == child) {
 		parent->right = NULL;
 	}
@@ -104,7 +104,7 @@ void deletenode(int data) {   //노드삭제
 			else {
 				//자식 노드가 없을 때 부모노드와 연결 해제
 				if (curr->left == NULL && curr->right == NULL) {
-					parentconnection(curr);
+					delparentconnect(curr);
 					free(curr);
 					break;
 				}
@@ -120,7 +120,7 @@ void deletenode(int data) {   //노드삭제
 						curr = curr->left;
 					}
 					temp->data = curr->data;
-					parentconnection(curr);
+					delparentconnect(curr);
 					free(curr);
 					break;
 				}
@@ -136,7 +136,7 @@ void deletenode(int data) {   //노드삭제
 						curr = curr->right;
 					}
 					temp->data = curr->data;
-					parentconnection(curr);
+					delparentconnect(curr);
 					free(curr);
 					break;
 				}
