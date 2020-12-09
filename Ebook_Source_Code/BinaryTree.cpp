@@ -1,20 +1,32 @@
-
+/*
 #include<stdio.h>
 #include<stdlib.h>
 
-typedef struct TNODE {
+typedef struct TNODE {  //트리 구조체 선언
 	char data;
 	struct TNODE* left;
 	struct TNODE* right;
 }TNODE;
 
 TNODE* root;
+TNODE* parent;   //부모노드 저장변수
 
 void init() {
 	root = NULL;
+	parent = NULL;
 }
 
-void addnode(int data) {
+//부모노드에서 삭제할 자식 노드 연결끊기
+void parentconnection(TNODE* child) {
+	if (parent->right == child) {
+		parent->right = NULL;
+	}
+	else {
+		parent->left = NULL;
+	}
+}
+
+void addnode(int data) {    //노드 추가
 	TNODE* curr;
 	curr = root;
 	TNODE* node = (TNODE*)malloc(sizeof(TNODE));
@@ -48,7 +60,7 @@ void addnode(int data) {
 	}
 }
 
-void deletenode(int data) {
+void deletenode(int data) {   //노드삭제
 	TNODE* curr;
 	TNODE* temp;
 	curr = root;
@@ -63,6 +75,7 @@ void deletenode(int data) {
 					break;
 				}
 				else {
+					parent = curr;
 					curr = curr->right;
 				}
 			}
@@ -72,16 +85,19 @@ void deletenode(int data) {
 					break;
 				}
 				else {
+					parent = curr;
 					curr = curr->left;
 				}
 			}
 			//원소 찾았을 때
 			else {
 				if (curr->left == NULL && curr->right == NULL) {
+					parentconnection(curr);
 					free(curr);
 					break;
 				}
 				else if (curr->left == NULL) {
+					parentconnection(curr);
 					temp = curr;
 					curr = curr->right;
 					while (curr->left != NULL) {
@@ -92,6 +108,7 @@ void deletenode(int data) {
 					break;
 				}
 				else {
+					parentconnection(curr);
 					temp = curr;
 					curr = curr->left;
 					while (curr->right != NULL) {
@@ -106,23 +123,52 @@ void deletenode(int data) {
 	}
 }
 
-void printtree() {
-	TNODE* curr;
-	curr = root;
-	while (curr!=NULL) {
-		printf("%d  ", curr->data);
-		curr = curr->right;
+void preorder(TNODE* node) {
+	if (node == NULL) {
+		return;
 	}
-	printf("\n");
+	else {
+		printf("%d ", node->data);
+		preorder(node->left);
+		preorder(node->right);
+	}
+}
+void inorder(TNODE* node) {
+	if (node == NULL) {
+		return;
+	}
+	else {
+		inorder(node->left);
+		printf("%d ", node->data);
+		inorder(node->right);
+	}
+}
+void postorder(TNODE* node) {
+	if (node == NULL) {
+		return;
+	}
+	else {
+		postorder(node->left);
+		postorder(node->right);
+		printf("%d ", node->data);
+	}
 }
 
 int main() {
 	init();
-	addnode(2);
-	addnode(1);
 	addnode(3);
+	addnode(1);
+	addnode(5);
+	addnode(0);
+	addnode(2);
 	addnode(4);
-	printtree();
-	deletenode(5);
-	printtree();
+	addnode(6);
+	printf("전위 순회 : ");
+	preorder(root);
+	printf("\n중위 순회 : ");
+	inorder(root);
+	printf("\n후위 순회 : ");
+	postorder(root);
+	printf("\n");
 }
+*/
