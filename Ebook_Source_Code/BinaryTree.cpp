@@ -21,9 +21,10 @@ void delparentconnect(TNODE* child) {
 	if (parent->right == child) {
 		parent->right = NULL;
 	}
-	else {
+	else if(parent->left == child){
 		parent->left = NULL;
 	}
+	else {}
 }
 
 void addnode(int data) {    //노드 추가
@@ -38,7 +39,6 @@ void addnode(int data) {    //노드 추가
 	}
 	else {
 		while (true) {
-
 			//curr보다 크면 오른쪽
 			if (curr->data < node->data) {
 				//자식 없으면 추가
@@ -102,11 +102,20 @@ void deletenode(int data) {   //노드삭제
 			}
 			//원소 찾았을 때
 			else {
-				//자식 노드가 없을 때 부모노드와 연결 해제
+				//자식 노드가 없을 때
 				if (curr->left == NULL && curr->right == NULL) {
-					delparentconnect(curr);
-					free(curr);
-					break;
+					//루트 노드일 때 NULL로 초기화
+					if (curr->data == root->data) {
+						free(curr);
+						root = NULL;
+						break;
+					}
+					//부모노드와 연결 해제
+					else {
+						delparentconnect(curr);
+						free(curr);
+						break;
+					}
 				}
 				//오른쪽 자식만 있을 때 오른쪽 자식으로 이동 후
 				//제일 작은 값의 노드와 원래 노드의 값을 바꾼 후
@@ -147,42 +156,65 @@ void deletenode(int data) {   //노드삭제
 
 //전위 순회 root->left->right
 void preorder(TNODE* node) {
-	if (node == NULL) {
-		return;
+	if (root == NULL) {
+		printf("공백 이진 트리\n");
 	}
 	else {
-		printf("%d ", node->data);
-		preorder(node->left);
-		preorder(node->right);
+		if (node == NULL) {
+			return;
+		}
+		else {
+			printf("%d ", node->data);
+			preorder(node->left);
+			preorder(node->right);
+		}
 	}
 }
 
 //중위 순회 left->root->right
 void inorder(TNODE* node) {
-	if (node == NULL) {
-		return;
+	if (root == NULL) {
+		printf("공백 이진 트리\n");
 	}
 	else {
-		inorder(node->left);
-		printf("%d ", node->data);
-		inorder(node->right);
+		if (node == NULL) {
+			return;
+		}
+		else {
+			inorder(node->left);
+			printf("%d ", node->data);
+			inorder(node->right);
+		}
 	}
 }
 
 //후위 순회 left->right->root
 void postorder(TNODE* node) {
-	if (node == NULL) {
-		return;
+	if (root == NULL) {
+		printf("공백 이진 트리\n");
 	}
 	else {
-		postorder(node->left);
-		postorder(node->right);
-		printf("%d ", node->data);
+		if (node == NULL) {
+			return;
+		}
+		else {
+			postorder(node->left);
+			postorder(node->right);
+			printf("%d ", node->data);
+		}
 	}
+}
+
+void testprint() {
+	printf("루트 : %d", root->data);
 }
 
 int main() {
 	init();
+	addnode(1);
+	deletenode(2);
+	deletenode(1);
+	inorder(root);
 	addnode(3);
 	addnode(1);
 	addnode(5);
