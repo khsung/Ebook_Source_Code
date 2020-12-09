@@ -24,7 +24,6 @@ void delparentconnect(TNODE* child) {
 	else if(parent->left == child){
 		parent->left = NULL;
 	}
-	else {}
 }
 
 void addnode(int data) {    //노드 추가
@@ -203,10 +202,6 @@ void postorder(TNODE* node) {
 			printf("%d ", node->data);
 		}
 	}
-}
-
-void testprint() {
-	printf("루트 : %d", root->data);
 }
 
 int main() {
