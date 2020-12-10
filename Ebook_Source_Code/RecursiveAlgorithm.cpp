@@ -1,18 +1,19 @@
 /*
 #include<stdio.h>
 
-void recursive(int num) {
+int recursive(int num) {
 	if (num == 0) {     //종료 조건
-		printf("count 종료");
+		printf("count 종료\n");
+		return 0;
 	}
 	else {
 		printf("count : %d\n",num);
-		recursive(num-1);
+		return num+recursive(num-1);
 	}
 }
 
 int main() {
 	int num = 5;
-	recursive(num);
+	printf("총 걸린 시간 : %d",recursive(num));
 }
 */
