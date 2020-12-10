@@ -34,6 +34,7 @@
     <ClCompile Include="InsertionSort.cpp" />
     <ClCompile Include="LinearSearch.cpp" />
     <ClCompile Include="QuickSort.cpp" />
+    <ClCompile Include="RecursiveAlgorithm.cpp" />
     <ClCompile Include="SelectionSort.cpp" />
     <ClCompile Include="SingleLinkedList.cpp" />
     <ClCompile Include="Queue.cpp" />
