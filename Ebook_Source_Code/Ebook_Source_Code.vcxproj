@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="BinarySearch.cpp" />
     <ClCompile Include="BinaryTree.cpp" />
+    <ClCompile Include="BruteForce.cpp" />
     <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="CircularLinkedList.cpp" />
     <ClCompile Include="CircularQueue.cpp" />
