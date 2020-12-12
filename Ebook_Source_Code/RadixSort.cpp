@@ -1,4 +1,4 @@
-/*
+
 #include<stdio.h>
 
 //배열의 원소 개수
@@ -10,6 +10,17 @@ typedef struct QUEUE {
 	int front[10] = { 0 }; 
 	int rear[10] = { -1,-1,-1 ,-1 ,-1 ,-1 ,-1 ,-1 ,-1 ,-1 };
 }QUEUE;
+
+void initqueue(QUEUE* q) {           //큐 초기화
+	for (int i = 0; i < 10; i++) {
+		q->front[i] = 0;
+		q->rear[i] = -1;
+	}
+}
+
+void adddata(QUEUE* q, int index, int data) {
+
+}
 
 //원소들의 최대 자리수 찾는 함수
 int findmaxdigit(int array[],int size) {
@@ -32,13 +43,13 @@ int main() {
 	int arraysize = sizeof(array) / sizeof(int);
 	int maxdigit = findmaxdigit(array, arraysize);
 	int currdigit = 1;
-
+	QUEUE queue;
+	initqueue(&queue);
 	for (int i = 1; i <= maxdigit; i++) {
 		for (int j = 0; j < arraysize; j++) {
-
+			array[j];
 		}
 		currdigit *= 10;
 	}
 
 }
-*/
