@@ -48,6 +48,7 @@ int main() {
 		}
 	}
 	printf("해시 테이블 : ");
+	//해시테이블 출력
 	for (int i = 0; i < (int)(sizeof(tablearray) / sizeof(int)); i++) {
 		printf("%d  ", tablearray[i]);
 	}
