@@ -137,6 +137,9 @@ int main() {
 	init(&heap);
 	printheap(&heap);
 	addheap(&heap, 6);
+	printheap(&heap);
+	deleteheap(&heap);
+	printheap(&heap);
 	addheap(&heap, 3);
 	addheap(&heap, 5);
 	addheap(&heap, 7);
@@ -145,6 +148,12 @@ int main() {
 	addheap(&heap, 6);
 	printheap(&heap);
 	deleteheap(&heap);
+	printheap(&heap);
+	deleteheap(&heap);
+	printheap(&heap);
+	deleteheap(&heap);
+	addheap(&heap, 7);
+	addheap(&heap, 9);
 	printheap(&heap);
 }
 */
