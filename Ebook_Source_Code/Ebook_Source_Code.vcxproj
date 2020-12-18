@@ -30,6 +30,7 @@
     <ClCompile Include="DoubleLinkedList.cpp" />
     <ClCompile Include="DynamicProgramming(Fibonacci).cpp" />
     <ClCompile Include="GraphMatrix.cpp" />
+    <ClCompile Include="GreedyAlgorithm%28Coin%29.cpp" />
     <ClCompile Include="HashSearch.cpp" />
     <ClCompile Include="Heap.cpp" />
     <ClCompile Include="HeapSort.cpp" />
