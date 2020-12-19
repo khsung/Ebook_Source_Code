@@ -27,6 +27,7 @@
     <ClCompile Include="CircularQueue.cpp" />
     <ClCompile Include="CountingSort.cpp" />
     <ClCompile Include="Deque.cpp" />
+    <ClCompile Include="DFS(DepthFirstSearch).cpp" />
     <ClCompile Include="DoubleLinkedList.cpp" />
     <ClCompile Include="DynamicProgramming(Fibonacci).cpp" />
     <ClCompile Include="GraphMatrix.cpp" />
