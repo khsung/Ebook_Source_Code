@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Backtracking(findD).cpp" />
+    <ClCompile Include="Backtracking(N_Queen).cpp" />
     <ClCompile Include="BinarySearch.cpp" />
     <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="BruteForce.cpp" />
