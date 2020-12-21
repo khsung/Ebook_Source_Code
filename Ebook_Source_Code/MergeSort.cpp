@@ -1,4 +1,4 @@
-
+/*
 #include<stdio.h>
 
 #define ARRAY_SIZE 5
@@ -13,16 +13,18 @@ void printarray(int array[], int size) {
 }
 
 
-void merge(int array[], int left, int mid, int right) {
-	int l = left, m = mid, r = right;
+void merge(int array[], int left, int mid, int right) {  //merge순서따라가면서 확인하기
+	int l = left, tempindex = left, m = mid;
 	int temp[ARRAY_SIZE] = { 0 };
 	while (l <= mid && m+1<=right) {
 		if (array[l] < array[m + 1]) {
-			temp[l] = array[l];
+			temp[tempindex] = array[l];
+			tempindex++;
 			l++;
 		}
 		else {
-			temp[m + 1] = array[m + 1];
+			temp[tempindex] = array[m + 1];
+			tempindex++;
 			m++;
 		}
 		for (int i = left; i <= right; i++) {
@@ -53,5 +55,6 @@ int main() {
 	int array[ARRAY_SIZE] = { 4,2,5,1,3 };
 	printarray(array, ARRAY_SIZE);
 	mergesort(array, 0, ARRAY_SIZE - 1);
-	//printarray(array, ARRAY_SIZE);
+	printarray(array, ARRAY_SIZE);
 }
+*/
