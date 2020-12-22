@@ -72,11 +72,15 @@ void mergesort(int array[], int left, int right) {
 		//내림을 함 (Ex. 3/2==1)
 		mid = (left + right) / 2;
 
-		//왼쪽 배열
-		mergesort(array, left, mid);
-		//오른쪽 배열
-		mergesort(array, mid + 1, right);
-		//반으로 나눴던 배열을 정렬하면서 합침
+		//배열 크기가 2라면 굳이 재귀함수를
+		//호출하지 않음
+		if (left + 1 != right) {
+			//왼쪽 배열
+			mergesort(array, left, mid);
+			//오른쪽 배열
+			mergesort(array, mid + 1, right);
+		}
+		//두개로 나눴던 배열을 정렬하면서 합침
 		merge(array, left, mid, right);
 	}
 }
