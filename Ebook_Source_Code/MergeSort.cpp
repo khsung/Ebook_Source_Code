@@ -1,21 +1,22 @@
 /*
 #include<stdio.h>
-
 #define ARRAY_SIZE 5
 
-
-
-void printarray(int array[], int size) {
+void printarray(int array[], int size) { //¹è¿­ Ãâ·Â ÇÔ¼ö
 	for (int i = 0; i < size; i++) {
 		printf("%d ", array[i]);
 	}
 	printf("\n");
 }
 
-
-void merge(int array[], int left, int mid, int right) {  //merge¼ø¼­µû¶ó°¡¸é¼­ È®ÀÎÇÏ±â
+//³ª´²Áø ¹è¿­À» Á¤·ÄÇÏ¸é¼­ ÇÕÄ¡´Â ÇÔ¼ö
+void merge(int array[], int left, int mid, int right) {
 	int l = left, tempindex = left, m = mid;
+	//ÀÓ½ÃÀúÀå ÇÏ±â À§ÇÑ ¹è¿­ ¼±¾ð
 	int temp[ARRAY_SIZE] = { 0 };
+
+	//left~mid, mid+1~right ÀÌ·¸°Ô ÀÎµ¦½º·Î ±¸ºÐ ÁöÀº
+	//µÎ ¹è¿­À» ÀÛÀº°ªºÎÅÍ ÀÓ½Ã¹è¿­¿¡ ÀúÀå
 	while (l <= mid && m+1<=right) {
 		if (array[l] < array[m + 1]) {
 			temp[tempindex] = array[l];
@@ -27,34 +28,66 @@ void merge(int array[], int left, int mid, int right) {  //merge¼ø¼­µû¶ó°¡¸é¼­ È
 			tempindex++;
 			m++;
 		}
-		for (int i = left; i <= right; i++) {
-			array[i] = temp[i];
-		}
-		printarray(temp, ARRAY_SIZE);
 	}
+
+	//ÇÑ°¡Áö ¹è¿­À» ´Ù ÀÓ½ÃÀúÀå ¹è¿­¿¡ ³Ö¾úÀ» ¶§
+	//³ª¸ÓÁö ¹è¿­Àº ÀÓ½Ã¹è¿­º¸´Ù ´õ Å«°ªµé·Î
+	//¿À¸§Â÷¼ø Á¤·ÄµÇ¾î ÀÖÀ¸¹Ç·Î ÀÓ½Ã¹è¿­¿¡
+	//³ÖÁö ¸øÇÑ ¿ø¼ÒµéÀ» Â÷·Ê·Î ³Ö¾îÁÜ
+	//m + 1 > rightÀÌ¸é ¿À¸¥ÂÊ ¹è¿­Àº ´Ù ³Ö°í
+	//¿ÞÂÊ ¹è¿­¸¸ ³²¾Ò´Ù´Â ¶æ
+	if (m + 1 > right) {
+		while (l <= mid) {
+			temp[tempindex] = array[l];
+			tempindex++;
+			l++;
+		}
+	}
+	//¿ÞÂÊ ¹è¿­Àº ´Ù ³Ö°í ¿À¸¥ÂÊ ¹è¿­¸¸ ³²À½
+	else {
+		while (m + 1 <= right) {
+			temp[tempindex] = array[m + 1];
+			tempindex++;
+			m++;
+		}
+	}
+
+	//ÀÓ½ÃÀúÀå ¹è¿­À» ¿ø·¡ ¹è¿­¿¡ º¹»çÇØÁÜ
+	for (int i = left; i <= right; i++) {
+		array[i] = temp[i];
+	}
+	printf("temp ¹è¿­ : ");
+	printarray(temp, ARRAY_SIZE);
+	printf("¿ø·¡ ¹è¿­ : ");
+	printarray(array, ARRAY_SIZE);
+	printf("\n");
 }
 
+//¹è¿­ »çÀÌÁî°¡ 1ÀÌ µÉ ¶§±îÁö ÀÎµ¦½º¸¦ ³ª´²ÁÜ
 void mergesort(int array[], int left, int right) {
 	int mid;
+	//left == rightÀÏ °æ¿ì »çÀÌÁî°¡ 1ÀÌ´Ù
 	if (left < right) {
+		//c¿¡¼­´Â intÇüÀÇ ³ª´°¼ÀÀÇ °æ¿ì
+		//³»¸²À» ÇÔ (Ex. 3/2==1)
 		mid = (left + right) / 2;
+
+		//¿ÞÂÊ ¹è¿­
 		mergesort(array, left, mid);
+		//¿À¸¥ÂÊ ¹è¿­
 		mergesort(array, mid + 1, right);
+		//¹ÝÀ¸·Î ³ª´³´ø ¹è¿­À» Á¤·ÄÇÏ¸é¼­ ÇÕÄ§
 		merge(array, left, mid, right);
 	}
 }
-//
-//void printarray(int array[],int size) {
-//	for(int i = 0; i < size; i++) {
-//		printf("%d ", array[i]);
-//	}
-//	printf("\n");
-//}
 
 int main() {
-	int array[ARRAY_SIZE] = { 4,2,5,1,3 };
+	int array[ARRAY_SIZE] = { 5,4,2,3,1 };
+	printf("Á¤·Ä Àü ¹è¿­ : ");
 	printarray(array, ARRAY_SIZE);
+	printf("\n====== Á¤·Ä °úÁ¤ ======\n");
 	mergesort(array, 0, ARRAY_SIZE - 1);
+	printf("Á¤·Ä µÈ ¹è¿­ : ");
 	printarray(array, ARRAY_SIZE);
 }
 */
