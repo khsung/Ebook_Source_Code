@@ -1,4 +1,4 @@
-
+/*
 #include<stdio.h>
 #include<stdlib.h>
 #define MAX_CHESS_SIZE 14
@@ -114,3 +114,5 @@ int main() {
 	N_Queen(chess, 0, num);
 	printf("퀸을 놓을 수 있는 경우의 수 : %d", count);
 }
+
+*/
