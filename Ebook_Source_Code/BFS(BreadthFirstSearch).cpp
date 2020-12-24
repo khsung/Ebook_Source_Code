@@ -1,8 +1,8 @@
 #include<stdio.h>
 
-typedef struct STACK {
+typedef struct QUEUE {
 
-}STACK;
+}QUEUE;
 
 int main() {
 
