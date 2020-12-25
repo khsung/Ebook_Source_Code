@@ -25,18 +25,48 @@ void initstack(STACK* s) {
 	s->top = -1;
 }
 
-void pushStack() {
+void initqueue(QUEUE* q) {
+	q->front = q->rear = 0;
+}
+
+void initvisited(int visited[GRAPH_SIZE]) {
+	for (int i = 0; i < GRAPH_SIZE; i++) {
+			visited[i] = 0;
+	}
+}
+
+void push() {
+
+}
+
+void pop() {
+
+}
+
+void enqueue() {
+
+}
+
+void dequeue() {
+
+}
+
+void DFS(int graph[GRAPH_SIZE][GRAPH_SIZE],int node) {
+
+}
+
+void BFS(int graph[GRAPH_SIZE][GRAPH_SIZE], int node) {
 
 }
 
 int main() {
 	int graph[GRAPH_SIZE][GRAPH_SIZE] = { {0,1,1,0,0},
 		{1,0,0,1,1},{1,0,0,1,0},{0,1,1,0,0},{0,1,0,0,0} };
+	int visited[GRAPH_SIZE];
 	printgraph(graph);
 	STACK Gstack;
+	QUEUE Gqueue;
 	initstack(&Gstack);
-	//printf("%d", Gstack.top);
-	//printf("%d", sizeof(Gstack.stack));
-	//for(int i=0;i<siz)
-	printf("%d", Gstack.stack[0]);
+	initqueue(&Gqueue);
+	initvisited(visited);
 }
