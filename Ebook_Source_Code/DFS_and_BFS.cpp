@@ -29,9 +29,9 @@ void initqueue(QUEUE* q) {
 	q->front = q->rear = 0;
 }
 
-void initvisited(int visited[GRAPH_SIZE]) {
+void initvisited(bool visited[GRAPH_SIZE]) {
 	for (int i = 0; i < GRAPH_SIZE; i++) {
-			visited[i] = 0;
+			visited[i] = false;
 	}
 }
 
@@ -62,7 +62,7 @@ void BFS(int graph[GRAPH_SIZE][GRAPH_SIZE], int node) {
 int main() {
 	int graph[GRAPH_SIZE][GRAPH_SIZE] = { {0,1,1,0,0},
 		{1,0,0,1,1},{1,0,0,1,0},{0,1,1,0,0},{0,1,0,0,0} };
-	int visited[GRAPH_SIZE];
+	bool visited[GRAPH_SIZE];
 	printgraph(graph);
 	STACK Gstack;
 	QUEUE Gqueue;
