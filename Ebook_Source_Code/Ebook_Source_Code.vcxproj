@@ -21,7 +21,6 @@
   <ItemGroup>
     <ClCompile Include="Backtracking(findD).cpp" />
     <ClCompile Include="Backtracking(N_Queen).cpp" />
-    <ClCompile Include="BFS(BreadthFirstSearch).cpp" />
     <ClCompile Include="BinarySearch.cpp" />
     <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="BruteForce.cpp" />
@@ -30,7 +29,7 @@
     <ClCompile Include="CircularQueue.cpp" />
     <ClCompile Include="CountingSort.cpp" />
     <ClCompile Include="Deque.cpp" />
-    <ClCompile Include="DFS(DepthFirstSearch).cpp" />
+    <ClCompile Include="DFS_and_BFS.cpp" />
     <ClCompile Include="DoubleLinkedList.cpp" />
     <ClCompile Include="DynamicProgramming(Fibonacci).cpp" />
     <ClCompile Include="GraphMatrix.cpp" />
