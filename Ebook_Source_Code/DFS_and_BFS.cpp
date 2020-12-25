@@ -69,4 +69,6 @@ int main() {
 	initstack(&Gstack);
 	initqueue(&Gqueue);
 	initvisited(visited);
+	DFS(graph, 0);
+	BFS(graph, 0);
 }
