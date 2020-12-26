@@ -3,40 +3,45 @@
 #define GRAPH_SIZE 5
 #define START_NODE 0
 
-typedef struct STACK {
+typedef struct STACK {       //스택 구조체 선언
 	int top;
 	int stack[MAX_SIZE];
 }STACK;
 
-typedef struct QUEUE {
+typedef struct QUEUE {       //큐 구조체 선언
 	int front, rear;
 	int queue[MAX_SIZE];
 }QUEUE;
 
+//그래프 출력
 void printgraph(int graph[GRAPH_SIZE][GRAPH_SIZE]) {
+	printf("그래프 행렬\n\n");
 	for (int i = 0; i < GRAPH_SIZE; i++) {
 		for (int j = 0; j < GRAPH_SIZE; j++) {
 			printf("%d ", graph[i][j]);
 		}
 		printf("\n");
 	}
+	printf("\n");
 }
 
-void initstack(STACK* s) {
+void initstack(STACK* s) {        //스택 초기화
 	s->top = -1;
 }
 
-void initqueue(QUEUE* q) {
+void initqueue(QUEUE* q) {        //큐 초기화
 	q->front = 0;
 	q->rear = -1;
 }
 
+//방문한 노드인지 체크하는 배열 초기화
 void initvisited(bool visited[GRAPH_SIZE]) {
 	for (int i = 0; i < GRAPH_SIZE; i++) {
 			visited[i] = false;
 	}
 }
 
+//스택에 인접 노드 추가
 void push(STACK* s, int node) {
 	if (s->top == MAX_SIZE - 1) {
 		printf("포화 스택\n");
@@ -52,6 +57,7 @@ int pop(STACK* s) {
 	return popdata;
 }
 
+//큐에 인접 노드 추가
 void enqueue(QUEUE* q, int node) {
 	if (q->rear == MAX_SIZE - 1) {
 		printf("포화 큐\n");
@@ -89,7 +95,7 @@ void DFS(int graph[GRAPH_SIZE][GRAPH_SIZE], bool visited[GRAPH_SIZE],int node, S
 
 void BFS(int graph[GRAPH_SIZE][GRAPH_SIZE], bool visited[GRAPH_SIZE], int node, QUEUE* q) {
 	int printnode;
-	printf("BFS 순서 : ");
+	printf("\nBFS 순서 : ");
 	if (node == START_NODE) {
 		enqueue(q, node);
 		visited[node] = true;
@@ -110,8 +116,8 @@ void BFS(int graph[GRAPH_SIZE][GRAPH_SIZE], bool visited[GRAPH_SIZE], int node, 
 int main() {
 	int graph[GRAPH_SIZE][GRAPH_SIZE] = { {0,1,1,0,0},
 		{1,0,0,1,1},{1,0,0,1,0},{0,1,1,0,0},{0,1,0,0,0} };
-	bool visited[GRAPH_SIZE];
-	//printgraph(graph);
+	bool visited[GRAPH_SIZE];    //방문한 노드인지 체크하는 배열, true는 방문한 노드
+	printgraph(graph);
 	STACK Gstack;
 	QUEUE Gqueue;
 	initstack(&Gstack);
