@@ -1,7 +1,8 @@
+/*
 #include<stdio.h>
-#define MAX_SIZE 100
-#define GRAPH_SIZE 5
-#define START_NODE 0
+#define MAX_SIZE 100      //큐나 자료구조의 최대 크기
+#define GRAPH_SIZE 5      //그래프 크기
+#define START_NODE 0      //그래프의 시작 노드
 
 typedef struct STACK {       //스택 구조체 선언
 	int top;
@@ -15,7 +16,7 @@ typedef struct QUEUE {       //큐 구조체 선언
 
 //그래프 출력
 void printgraph(int graph[GRAPH_SIZE][GRAPH_SIZE]) {
-	printf("그래프 행렬\n\n");
+	printf("그래프 행렬\n");
 	for (int i = 0; i < GRAPH_SIZE; i++) {
 		for (int j = 0; j < GRAPH_SIZE; j++) {
 			printf("%d ", graph[i][j]);
@@ -73,16 +74,22 @@ int dequeue(QUEUE* q) {
 	return dequeuedata;
 }
 
+//깊이 우선 탐색
 void DFS(int graph[GRAPH_SIZE][GRAPH_SIZE], bool visited[GRAPH_SIZE],int node, STACK* s) {
 	int printnode;
 	printf("DFS 순서 : ");
+	//시작 노드일 때 스택에 저장
 	if (node == START_NODE) {
 		push(s, node);
 		visited[node] = true;
 	}
+
+	//스택이 공백상태가 될 때까지
 	while (s->top > -1) {
+		//스택에서 꺼낸 노드 출력
 		printnode = pop(s);
 		printf("%d ", printnode);
+		//스택에서 꺼낸 노드와 인접한 노드를 방문 안했을 경우 스택에 저장
 		for (int i = 0; i < GRAPH_SIZE; i++) {
 			if (graph[printnode][i] == 1 && visited[i] == false) {
 				push(s, i);
@@ -93,16 +100,22 @@ void DFS(int graph[GRAPH_SIZE][GRAPH_SIZE], bool visited[GRAPH_SIZE],int node, S
 	printf("\n");
 }
 
+//너비 우선 탐색
 void BFS(int graph[GRAPH_SIZE][GRAPH_SIZE], bool visited[GRAPH_SIZE], int node, QUEUE* q) {
 	int printnode;
 	printf("\nBFS 순서 : ");
+	//시작 노드일 때 큐에 저장
 	if (node == START_NODE) {
 		enqueue(q, node);
 		visited[node] = true;
 	}
-	while (q->front <=q->rear) {
+
+	//큐가 공백상태가 될 때까지
+	while (q->front <= q->rear) {
+		//큐에서 꺼낸 노드 출력
 		printnode = dequeue(q);
 		printf("%d ", printnode);
+		//큐에서 꺼낸 노드와 인접한 노드를 방문 안했을 경우 큐에 저장 
 		for (int i = 0; i < GRAPH_SIZE; i++) {
 			if (graph[printnode][i] == 1 && visited[i] == false) {
 				enqueue(q, i);
@@ -114,6 +127,7 @@ void BFS(int graph[GRAPH_SIZE][GRAPH_SIZE], bool visited[GRAPH_SIZE], int node, 
 }
 
 int main() {
+	//그래프 행렬
 	int graph[GRAPH_SIZE][GRAPH_SIZE] = { {0,1,1,0,0},
 		{1,0,0,1,1},{1,0,0,1,0},{0,1,1,0,0},{0,1,0,0,0} };
 	bool visited[GRAPH_SIZE];    //방문한 노드인지 체크하는 배열, true는 방문한 노드
@@ -127,3 +141,4 @@ int main() {
 	initvisited(visited);
 	BFS(graph, visited, START_NODE, &Gqueue);
 }
+*/
