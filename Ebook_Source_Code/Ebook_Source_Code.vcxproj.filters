@@ -99,5 +99,8 @@
     <ClCompile Include="DFS_and_BFS.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="DijkstraAlgorithm.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
