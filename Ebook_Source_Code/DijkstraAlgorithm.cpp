@@ -74,9 +74,11 @@ int main() {
 	printarray(path, GRAPH_SIZE);
 	printf("\n");
 	startnode = 0;
+
 	for (int i = 0; i < GRAPH_SIZE; i++) {
 		printf("목적지 노드 : %d  최소비용 경로 : ", i);
 		printf("%d", i);
+
 		//현재노드 임시저장
 		int temp = i;
 		while (temp != 0) {
