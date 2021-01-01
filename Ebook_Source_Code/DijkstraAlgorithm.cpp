@@ -3,6 +3,7 @@
 
 #define GRAPH_SIZE 5    //그래프 크기 선언
 #define INF 999         //무한대 대체 변수선언 상황에 따라 변경
+#define STARTNODE 0     //시작노드 선언
 
 //배열 출력 함수
 void printarray(int array[], int arraysize) {
@@ -24,9 +25,10 @@ int main() {
 	//방문했는지 체크하는 배열, 배열크기만큼 false로 자동 초기화
 	bool visited[GRAPH_SIZE] = {};
 	int min, minindex;            //최소값과 최소값의 인덱스 저장 변수
-	int startnode = 0;            //시작 노드
+	int startnode = STARTNODE;    //시작 노드 저장
 	cost[startnode] = 0;          //시작 노드 비용 갱신
-	
+
+
 	//그래프 출력
 	printf("그래프 행렬\n");
 	for (int i = 0; i < GRAPH_SIZE; i++) {
@@ -73,7 +75,7 @@ int main() {
 	printf("\n경로 배열 : ");
 	printarray(path, GRAPH_SIZE);
 	printf("\n");
-	startnode = 0;
+	startnode = STARTNODE;       //초기 시작노드로 초기화
 
 	for (int i = 0; i < GRAPH_SIZE; i++) {
 		printf("목적지 노드 : %d  최소비용 경로 : ", i);
@@ -81,7 +83,7 @@ int main() {
 
 		//현재노드 임시저장
 		int temp = i;
-		while (temp != 0) {
+		while (temp != startnode) {
 			//경로 배열의 값은 다음 인덱스를 의미
 			temp = path[temp];
 			printf(" <- %d", temp);
