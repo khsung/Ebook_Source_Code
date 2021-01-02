@@ -20,7 +20,9 @@ int initSegment(int left, int right, int index) {
 }
 
 int findsum(int left, int right, int first, int second) {
-	return 0;
+	//if (left == first && right == second) {
+	//	return 
+	//}
 }
 
 int main() {
