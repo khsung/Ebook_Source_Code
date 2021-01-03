@@ -19,10 +19,20 @@ int initSegment(int left, int right, int index) {
 	}
 }
 
-int findsum(int left, int right, int first, int second) {
-	//if (left == first && right == second) {
-	//	return 
-	//}
+int findsum(int left, int right, int first, int second, int index) {
+	int mid = (left + right) / 2;
+	if (left == first && right == second) {
+		return segmenttree[index];
+	}
+	else if (second <= mid) {
+		return findsum(left, mid, first, second, 2 * index);
+	}
+	else if (first > mid) {
+		return findsum(mid + 1, right, first, second, 2 * index + 1);
+	}
+	else {
+		return findsum(left, mid, first, mid, 2 * index) + findsum(mid + 1, right, mid + 1, second, 2 * index + 1);
+	}
 }
 
 int main() {
@@ -40,7 +50,7 @@ int main() {
 		firstindex = secondindex;
 		secondindex = temp;
 	}
-	int answer = findsum(0, ARRAY_SIZE - 1, firstindex, secondindex);
+	int answer = findsum(0, ARRAY_SIZE - 1, firstindex, secondindex, segmentIndex);
 	printf("인덱스 %d부터 %d까지의 합 : %d", firstindex, secondindex, answer);
 	
 }
