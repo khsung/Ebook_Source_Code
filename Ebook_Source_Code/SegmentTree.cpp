@@ -23,6 +23,7 @@ int initSegment(int left, int right, int treeindex) {
 			segmentMaxIndex = treeindex;
 		return segmenttree[treeindex] = originarray[left];
 	}
+	//두개 이상의 인덱스를 포함하는 노드
 	else {
 		int mid = (left + right) / 2;
 		//왼쪽 자식노드와 오른쪽 자식노드의 값을 더함
@@ -33,7 +34,7 @@ int initSegment(int left, int right, int treeindex) {
 
 //범위 합을 구하는 함수
 //left : 세그먼트 트리 구간의 왼쪽 인덱스, right : 세그먼트 트리 구간의 오른쪽 인덱스
-//first : 범위의 왼쪽 인덱스, second : 범위의 오른쪽 인덱스
+//first : 구간합의 왼쪽 인덱스, second : 구간합의 오른쪽 인덱스
 int findsum(int left, int right, int first, int second, int treeindex) {
 	int mid = (left + right) / 2;
 	//현재 노드의 구간일 경우
@@ -48,6 +49,7 @@ int findsum(int left, int right, int first, int second, int treeindex) {
 	else if (first > mid) {
 		return findsum(mid + 1, right, first, second, 2 * treeindex + 1);
 	}
+	//왼쪽 자식과 오른쪽 자식 둘 다에 포함되는 범위일 경우
 	else {
 		//왼쪽 자식과 오른쪽 자식으로 나누어 반환되는 값을 더함
 		return findsum(left, mid, first, mid, 2 * treeindex) +
@@ -90,9 +92,8 @@ void printsum(int segmentIndex) {
 }
 
 int main() {
-	int segmentIndex = 1;    //세그먼트 트리의 루트 인덱스(모든 원소의 합인 인덱스) 선언
+	int segmentIndex = 1;   //세그먼트 트리의 루트 인덱스(모든 원소의 합인 인덱스) 선언
 	initSegment(0, ARRAY_SIZE-1, segmentIndex);
-	
 	printf("세그먼트 트리의 최대 인덱스 : %d\n", segmentMaxIndex);
 
 	printsum(segmentIndex);
