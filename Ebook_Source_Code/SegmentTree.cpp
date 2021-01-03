@@ -92,11 +92,11 @@ void printsum(int segmentIndex) {
 }
 
 int main() {
-	int segmentIndex = 1;   //세그먼트 트리의 루트 인덱스(모든 원소의 합인 인덱스) 선언
-	initSegment(0, ARRAY_SIZE-1, segmentIndex);
+	int segmentindex = 1;   //세그먼트 트리의 루트 인덱스(모든 원소의 합인 인덱스) 선언
+	initSegment(0, ARRAY_SIZE-1, segmentindex);
 	printf("세그먼트 트리의 최대 인덱스 : %d\n", segmentMaxIndex);
 
-	printsum(segmentIndex);
+	printsum(segmentindex);
 	
 	//changevalueindex : 배열의 값을 변경할 위치, originvalue : 원래 배열의 값,
 	//difference : 원래 배열의 값과 갱신한 값의 차이
@@ -109,7 +109,7 @@ int main() {
 
 	//원래 값과 변경 된 값의 차이
 	difference = originarray[changevalueindex]- originvalue;
-	updatesegment(0, ARRAY_SIZE - 1, segmentIndex, changevalueindex, difference);
+	updatesegment(0, ARRAY_SIZE - 1, segmentindex, changevalueindex, difference);
 
-	printsum(segmentIndex);
+	printsum(segmentindex);
 }
