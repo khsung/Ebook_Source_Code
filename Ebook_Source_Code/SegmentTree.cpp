@@ -1,4 +1,4 @@
-
+/*
 #include<stdio.h>
 #define ARRAY_SIZE 7                 //배열 크기 선언
 #define SEGMENT_SIZE ARRAY_SIZE*4    //편의상 배열크기의 4배를 선언
@@ -113,3 +113,4 @@ int main() {
 
 	printsum(segmentindex);
 }
+*/
