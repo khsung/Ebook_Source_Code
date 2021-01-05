@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #define ALPHABET 26				//알파벳 개수(a ~ z)
-#define WORD_AMOUNT 6			//단어 개수 선언
+#define WORD_AMOUNT 7			//단어 개수 선언
 #define MAX_WORD_LENGTH 20		//단어 길이 선언
 
 typedef struct TRIE {
@@ -74,8 +74,8 @@ void findword(TRIE* trie, char word[]) {
 
 int main() {
 	TRIE* trie = (TRIE*)malloc(sizeof(TRIE));
-	char wordset[WORD_AMOUNT][MAX_WORD_LENGTH] = {"tree","trie","segment","stack",
-					"backtracking","binary"};
+	char wordset[WORD_AMOUNT][MAX_WORD_LENGTH] = {"tree","trie","trim","steel","stack",
+					"bind","bin"};
 	char word[MAX_WORD_LENGTH];
 
 	inittrie(trie);
