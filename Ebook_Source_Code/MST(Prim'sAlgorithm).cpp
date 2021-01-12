@@ -1,4 +1,5 @@
 
+/*
 #include<stdio.h>
 #define INF 9999			//무한대 변수 선언
 #define GRAPH_SIZE 5		//그래프 노드 개수
@@ -64,3 +65,4 @@ int main() {
 	}
 	printf("\n최종 비용 : %d\n", costsum);
 }
+*/
