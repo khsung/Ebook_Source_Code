@@ -114,5 +114,8 @@
     <ClCompile Include="MST(Prim%27sAlgorithm).cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="MST(Kruskal%27sAlgorithm).cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

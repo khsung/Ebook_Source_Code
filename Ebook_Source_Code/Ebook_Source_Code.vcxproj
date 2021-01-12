@@ -42,6 +42,7 @@
     <ClCompile Include="InsertionSort.cpp" />
     <ClCompile Include="LinearSearch.cpp" />
     <ClCompile Include="MergeSort.cpp" />
+    <ClCompile Include="MST(Kruskal%27sAlgorithm).cpp" />
     <ClCompile Include="MST(Prim%27sAlgorithm).cpp" />
     <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="RadixSort.cpp" />
