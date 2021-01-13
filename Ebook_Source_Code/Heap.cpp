@@ -1,17 +1,17 @@
-/*
-#include<stdio.h>
-#define MAX_HEAP_SIZE 100  //힙 최대 크기
 
-typedef struct {        //최대 힙 구조체 정의
+#include<stdio.h>
+#define MAX_HEAP_SIZE 100		//힙 최대 크기
+
+typedef struct {				//최대 힙 구조체 정의
 	int currheapsize;
 	int heap[MAX_HEAP_SIZE];
 }MAXHEAP;
 
-void init(MAXHEAP* h) {   //힙 초기화
+void init(MAXHEAP* h) {			//힙 초기화
 	h->currheapsize = 0;
 }
 
-int isempty(MAXHEAP* h) {   //공백 상태일 때 true 반환
+int isempty(MAXHEAP* h) {		//공백 상태일 때 1(true) 반환
 	if (h->currheapsize == 0) {  
 		return 1;
 	}
@@ -20,7 +20,7 @@ int isempty(MAXHEAP* h) {   //공백 상태일 때 true 반환
 	}
 }
 
-int isfull(MAXHEAP* h) {      //포화 상태일 때 true 반환
+int isfull(MAXHEAP* h) {		//포화 상태일 때 1(true) 반환
 	if (h->currheapsize == MAX_HEAP_SIZE-1) {
 		return 1;
 	}
@@ -29,7 +29,7 @@ int isfull(MAXHEAP* h) {      //포화 상태일 때 true 반환
 	}
 }
 
-void swap(int* a, int* b) {     //값 교환
+void swap(int* a, int* b) {				//값 교환
 	int temp;
 	temp = *a;
 	*a = *b;
@@ -42,6 +42,7 @@ void addheap(MAXHEAP* h, int data) {     //원소 값 추가
 	}
 	else {
 		h->currheapsize++;
+		//현재 인덱스, 제일 끝 원소의 인덱스부터 시작
 		int currindex = h->currheapsize;
 		h->heap[currindex] = data;    //마지막 인덱스에 값 추가
 		
@@ -68,6 +69,7 @@ void deleteheap(MAXHEAP* h) {      //최대 값 원소 제거
 		}
 		else {
 			int curr = 1;
+			//마지막 원소의 값 최상단으로 이동하고 힙구조 정렬
 			h->heap[curr] = h->heap[h->currheapsize];
 			h->currheapsize--;
 
@@ -76,6 +78,7 @@ void deleteheap(MAXHEAP* h) {      //최대 값 원소 제거
 
 				//왼쪽 자식만 있을 때
 				if (2 * curr == h->currheapsize) {
+					//자식 값이 더 크면 부모와 자식의 값을 교환
 					if (h->heap[curr] <= h->heap[2 * curr]) {
 						swap(&h->heap[curr], &h->heap[2 * curr]);
 						curr = 2 * curr;
@@ -87,9 +90,9 @@ void deleteheap(MAXHEAP* h) {      //최대 값 원소 제거
 
 				//왼쪽 오른쪽 둘 다 있을 때
 				else {
-
 					//오른쪽 자식이 클 때
 					if (h->heap[2 * curr] < h->heap[2 * curr + 1]) {
+						//자식 값이 더 크면 부모와 자식의 값을 교환
 						if (h->heap[curr] <= h->heap[2 * curr + 1]) {
 							swap(&h->heap[curr], &h->heap[2 * curr + 1]);
 							curr = 2 * curr + 1;
@@ -101,6 +104,7 @@ void deleteheap(MAXHEAP* h) {      //최대 값 원소 제거
 
 					//왼쪽 자식이 더 크거나 같을 때
 					else {
+						//자식 값이 더 크면 부모와 자식의 값을 교환
 						if (h->heap[curr] <= h->heap[2 * curr]) {
 							swap(&h->heap[curr], &h->heap[2 * curr]);
 							curr = 2 * curr;
@@ -115,12 +119,13 @@ void deleteheap(MAXHEAP* h) {      //최대 값 원소 제거
 	}
 }
 
+//힙 출력 함수
 void printheap(MAXHEAP* h) {
 	if (h->currheapsize == 0) {
-		printf("공백 힙\n");
+		printf("공백 힙");
 	}
 	else {
-		int line = 2;
+		int line = 2;		//트리의 레벨 단위로 출력하기위한 변수
 		for (int i = 1; i <= h->currheapsize; i++) {
 			printf("%d  ", h->heap[i]);
 			if (i == line - 1) {
@@ -129,7 +134,7 @@ void printheap(MAXHEAP* h) {
 			}
 		}
 	}
-	printf("\n");
+	printf("\n\n");
 }
 
 int main() {
@@ -144,16 +149,11 @@ int main() {
 	addheap(&heap, 5);
 	addheap(&heap, 7);
 	addheap(&heap, 9);
+	addheap(&heap, 6);
 	addheap(&heap, 1);
+	printheap(&heap);
 	addheap(&heap, 6);
 	printheap(&heap);
 	deleteheap(&heap);
 	printheap(&heap);
-	deleteheap(&heap);
-	printheap(&heap);
-	deleteheap(&heap);
-	addheap(&heap, 7);
-	addheap(&heap, 9);
-	printheap(&heap);
 }
-*/
