@@ -26,8 +26,7 @@ void sortedge(int edgeinfo[][3], int edgeinfoindex) {
 	}
 }
 
-//find함수, 해당 노드의 root 노드 반환
-//root 노드 : 자기 자신을 가리키는 노드
+//find함수, 해당 노드의 root 노드 반환, root 노드 : 자기 자신을 가리키는 노드
 int find(int union_find[], int index) {
 	if (union_find[index] == index)
 		return index;
