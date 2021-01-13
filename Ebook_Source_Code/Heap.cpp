@@ -75,7 +75,7 @@ void deleteheap(MAXHEAP* h) {      //최대 값 원소 제거
 			h->currheapsize--;
 
 			//현재 힙의 크기까지만 탐색하도록 제한
-			while (2 * curr + 1 <= h->currheapsize) {
+			while (2 * curr <= h->currheapsize) {
 				//왼쪽 자식만 있을 때
 				if (2 * curr == h->currheapsize) {
 					//자식 값이 더 크면 부모와 자식의 값을 교환
