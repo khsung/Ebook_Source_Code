@@ -1,4 +1,5 @@
 
+/*
 #include<stdio.h>
 #define GRAPH_SIZE 5					//그래프 크기
 #define EDGE_INFO_MAX_SIZE GRAPH_SIZE*(GRAPH_SIZE-1)  //간선 최대 개수
@@ -115,3 +116,4 @@ int main() {
 	}
 	printf("\n최종 비용 : %d", costsum);
 }
+*/
