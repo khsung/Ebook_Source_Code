@@ -1,4 +1,5 @@
 
+/*
 #include<stdio.h>
 #define MAX_HEAP_SIZE 100		//힙 최대 크기
 
@@ -75,7 +76,6 @@ void deleteheap(MAXHEAP* h) {      //최대 값 원소 제거
 
 			//현재 힙의 크기까지만 탐색하도록 제한
 			while (2 * curr + 1 <= h->currheapsize) {
-
 				//왼쪽 자식만 있을 때
 				if (2 * curr == h->currheapsize) {
 					//자식 값이 더 크면 부모와 자식의 값을 교환
@@ -125,6 +125,7 @@ void printheap(MAXHEAP* h) {
 		printf("공백 힙");
 	}
 	else {
+		printf("힙 구조\n");
 		int line = 2;		//트리의 레벨 단위로 출력하기위한 변수
 		for (int i = 1; i <= h->currheapsize; i++) {
 			printf("%d  ", h->heap[i]);
@@ -157,3 +158,4 @@ int main() {
 	deleteheap(&heap);
 	printheap(&heap);
 }
+*/
