@@ -1,18 +1,18 @@
 /*
 #include<stdio.h>
-#define MAX_CQUEUE_SIZE 6  //원형 큐 최대 크기
+#define MAX_CQUEUE_SIZE 6	//원형 큐 최대 크기 선언
 
-typedef struct {    //원형 큐 구조체 선언
+typedef struct {			//원형 큐 구조체 선언
 	int front;
 	int rear;
 	int CQUEUE[MAX_CQUEUE_SIZE];
 }CQUEUE;
 
-void init(CQUEUE* c) {    //원형 큐 초기화
+void init(CQUEUE* c) {		//원형 큐 초기화
 	c->front = c->rear = 0;
 }
 
-int isempty(CQUEUE* c) {  //공백 상태 체크
+int isempty(CQUEUE* c) {	//공백 상태 체크
 	if (c->front == c->rear) {
 		return 1;
 	}
@@ -22,6 +22,7 @@ int isempty(CQUEUE* c) {  //공백 상태 체크
 }
 
 int isfull(CQUEUE* c) {     //포화 상태 체크
+	//원형으로 돌기 위해 큐의 최대 크기로 나머지 연산을 실시 
 	if (c->front==(c->rear+1)% MAX_CQUEUE_SIZE) {
 		return 1;
 	}
@@ -30,7 +31,7 @@ int isfull(CQUEUE* c) {     //포화 상태 체크
 	}
 }
 
-void enqueue(CQUEUE* c,int d) {    //rear 위치에
+void enqueue(CQUEUE* c,int d) {    //rear가 증가한 위치에
 	if (isfull(c)) {               //원소 삽입
 		printf("포화 원형 큐\n");
 	}
@@ -40,7 +41,7 @@ void enqueue(CQUEUE* c,int d) {    //rear 위치에
 	}
 }
 
-void dequeue(CQUEUE* c) {   //front 위치 원소 제거
+void dequeue(CQUEUE* c) {	//front 위치 원소 제거
 	if (isempty(c)) {
 		printf("공백 원형 큐\n");
 	}
@@ -65,7 +66,7 @@ void printCqueue(CQUEUE* c) {   //원형 큐 출력
 }
 
 int main() {
-	CQUEUE cqueue;
+	CQUEUE cqueue;		   //원형 큐 생성
 	init(&cqueue);
 	printCqueue(&cqueue);
 	enqueue(&cqueue, 1);
