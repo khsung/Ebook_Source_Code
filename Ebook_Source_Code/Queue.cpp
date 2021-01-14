@@ -2,7 +2,7 @@
 #include <stdio.h>
 #define MAX_QUEUE_SIZE 100
  
-typedef struct {              //큐 구조체 선언
+typedef struct {				//큐 구조체 선언
 	int front;
 	int rear;
 	int queue[MAX_QUEUE_SIZE];
@@ -11,7 +11,7 @@ typedef struct {              //큐 구조체 선언
 void init(QUEUE* q) {           //큐 초기화
 	q->front = q->rear = 0;
 }
-int isempty(QUEUE* q) {       //큐 공백상태 체크
+int isempty(QUEUE* q) {			//큐 공백상태 체크
 	if (q->front == q->rear)
 		return 1;
 	else
@@ -31,11 +31,11 @@ void enqueue(QUEUE* q, int number) {    //큐 원소삽입
 		q->rear++;
 	}
 }
-void dequeue(QUEUE* q) {       //큐 원소제거
+void dequeue(QUEUE* q) {		//큐 원소제거
 	if (isempty(q) == 1)
 		printf("공백 큐\n");
 	else {
-		printf("Front 원소 제거 : %d\n", q->queue[q->front]);
+		printf("Front 원소 제거 : %d\n",q->queue[q->front]);
 		q->front++;
 	}
 }
@@ -51,11 +51,12 @@ void printqueue(QUEUE* q) {      //큐 출력
 	}
 }
 int main() {
-	QUEUE testqueue;
-	init(&testqueue);
+	QUEUE testqueue;			//큐 구조체 생성
+	init(&testqueue);			//큐 초기화
 	enqueue(&testqueue, 10);
 	enqueue(&testqueue, 20);
 	printqueue(&testqueue);
 	dequeue(&testqueue);
+	printqueue(&testqueue);
 }
 */
