@@ -1,4 +1,4 @@
-
+/*
 #include<stdio.h>
 #include<stdlib.h>
 #define ALPHABET 26				//알파벳 개수(a ~ z)
@@ -79,13 +79,19 @@ int main() {
 					"bind","bin"};
 	char word[MAX_WORD_LENGTH];
 
-	int tempindex = 0;
+	int tempindex;
 	printf("존재하는 문자열 : ");
-	for (int i = 0; i < WORD_AMOUNT; i++) {
+	for (int i = 0; i < WORD_AMOUNT; i++) {		//문자열 세트 출력
+		tempindex = 0;
 		while (wordset[i][tempindex] != '\0') {
 			printf("%c", wordset[i][tempindex]);
+			tempindex++;
 		}
-		printf(", ");
+		if (i != WORD_AMOUNT - 1)
+			printf(", ");
+		else
+			printf("\n\n");
+
 	}
 		inittrie(trie);
 	trietree(trie, wordset);
@@ -95,3 +101,4 @@ int main() {
 		findword(trie, word);
 	}
 }
+*/
