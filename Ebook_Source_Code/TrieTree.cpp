@@ -1,4 +1,4 @@
-/*
+
 #include<stdio.h>
 #include<stdlib.h>
 #define ALPHABET 26				//알파벳 개수(a ~ z)
@@ -18,9 +18,10 @@ void inittrie(TRIE* trie) {
 
 //트라이 트리 생성
 void trietree(TRIE* trie, char wordset[WORD_AMOUNT][MAX_WORD_LENGTH]) {
-	int currword = 0;          //단어의 순서
+	int currword = 0;          //단어의 순서, 몇 번째 단어인지(0번째 단어 부터 시작)
 	int currlength = 0;        //각 단어의 인덱스
 	TRIE* current;			   //현재 노드 선언
+
 	//단어가 있는 만큼 반복
 	while (currword < WORD_AMOUNT && wordset[currword][currlength] != NULL) {
 		//새로운 단어로 넘어갈 때마다 현재노드를 최상위 노드로 초기화 
@@ -78,7 +79,15 @@ int main() {
 					"bind","bin"};
 	char word[MAX_WORD_LENGTH];
 
-	inittrie(trie);
+	int tempindex = 0;
+	printf("존재하는 문자열 : ");
+	for (int i = 0; i < WORD_AMOUNT; i++) {
+		while (wordset[i][tempindex] != '\0') {
+			printf("%c", wordset[i][tempindex]);
+		}
+		printf(", ");
+	}
+		inittrie(trie);
 	trietree(trie, wordset);
 	for (int i = 0; i < 3; i++) {
 		printf("찾을 문자열 입력 (최대 길이 %d) : ", MAX_WORD_LENGTH);
@@ -86,4 +95,3 @@ int main() {
 		findword(trie, word);
 	}
 }
-*/

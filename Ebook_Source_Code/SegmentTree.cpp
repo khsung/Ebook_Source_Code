@@ -1,14 +1,13 @@
 /*
 #include<stdio.h>
-#define ARRAY_SIZE 7                 //배열 크기 선언
-#define SEGMENT_SIZE ARRAY_SIZE*4    //편의상 배열크기의 4배를 선언
+#define ARRAY_SIZE 7				  //배열 크기 선언
+#define SEGMENT_SIZE ARRAY_SIZE*4	  //세그먼트 트리 크기,편의상 배열크기의 4배를 선언
 
 int originarray[ARRAY_SIZE] = { 4,7,1,-3,10,-1,6 };  //구간 합을 구할 배열
 int segmenttree[SEGMENT_SIZE];                       //세그먼트 트리 구현 배열
 int segmentMaxIndex = 0;              //세그먼트 트리의 최대 인덱스를 구하는 변수 선언
 
-//두 숫자 교환
-void swap(int* a, int* b) {
+void swap(int* a, int* b) {			  //두 숫자 교환
 	int temp = *a;
 	*a = *b;
 	*b = temp;
@@ -34,7 +33,7 @@ int initSegment(int left, int right, int treeindex) {
 
 //범위 합을 구하는 함수
 //left : 세그먼트 트리 구간의 왼쪽 인덱스, right : 세그먼트 트리 구간의 오른쪽 인덱스
-//first : 구간합의 왼쪽 인덱스, second : 구간합의 오른쪽 인덱스
+//first : 구간 합의 왼쪽 인덱스, second : 구간 합의 오른쪽 인덱스
 int findsum(int left, int right, int first, int second, int treeindex) {
 	int mid = (left + right) / 2;
 	//현재 노드의 구간일 경우
