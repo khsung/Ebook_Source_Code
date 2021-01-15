@@ -2,16 +2,16 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-typedef struct TNODE {  //트리 구조체 선언
+typedef struct TNODE {		//트리 구조체 선언
 	char data;
-	struct TNODE* left;
-	struct TNODE* right;
+	struct TNODE* left;		//왼쪽 자식 노드
+	struct TNODE* right;	//오른쪽 자식 노드
 }TNODE;
 
-TNODE* root;	 //루트노드 저장변수
-TNODE* parent;   //부모노드 저장변수
+TNODE* root;				//루트노드 저장변수
+TNODE* parent;				//부모노드 저장변수
 
-void init() {
+void init() {				//초기화
 	root = NULL;
 	parent = NULL;
 }
@@ -26,23 +26,28 @@ void delparentconnect(TNODE* child) {
 	}
 }
 
-void addnode(int data) {    //노드 추가
-	TNODE* curr;
-	curr = root;    //현재 위치 노드
-	TNODE* node = (TNODE*)malloc(sizeof(TNODE));
+//추가 노드 생성 시 초기화
+void initnode(TNODE* node, int data) {
 	node->data = data;
 	node->left = NULL;
 	node->right = NULL;
-	if (root == NULL) {
-		root = node;
+}
+
+void addnode(int data) {	//노드 추가
+	TNODE* curr;			//현재 위치 변수 선언
+	curr = root;
+	TNODE* newnode = (TNODE*)malloc(sizeof(TNODE));
+	initnode(newnode, data);
+	if (curr == NULL) {		//루트 노드가 공백 상태면 루트에 추가
+		root = newnode;
 	}
 	else {
 		while (true) {
 			//curr보다 크면 오른쪽
-			if (curr->data < node->data) {
+			if (curr->data < newnode->data) {
 				//자식 없으면 추가
 				if (curr->right == NULL) {
-					curr->right = node;
+					curr->right = newnode;
 					break;
 				}
 				//자식 노드로 이동
@@ -52,7 +57,7 @@ void addnode(int data) {    //노드 추가
 			else {
 				//자식 없으면 추가
 				if (curr->left == NULL) {
-					curr->left = node;
+					curr->left = newnode;
 					break;
 				}
 				//자식 노드로 이동
@@ -71,7 +76,7 @@ void deletenode(int data) {   //노드삭제
 	}
 	else {
 		while (true) {
-			//현재 노드 값보다 원하는 값이 더 클 때
+			//현재 노드 값보다 지울 값이 더 클 때
 			if (curr->data < data) {
 				//현재 노드 값보다 더 큰 값이 없을 때
 				if (curr->right == NULL) {
@@ -85,7 +90,7 @@ void deletenode(int data) {   //노드삭제
 					curr = curr->right;
 				}
 			}
-			//현재 노드 값보다 원하는 값이 더 작을 때
+			//현재 노드 값보다 지울 값이 더 작을 때
 			else if (curr->data > data) {
 				//현재 노드 값보다 더 작은 값이 없을 때
 				if (curr->left == NULL) {
@@ -116,10 +121,12 @@ void deletenode(int data) {   //노드삭제
 						break;
 					}
 				}
-				//오른쪽 자식만 있을 때 오른쪽 자식으로 이동 후
-				//제일 작은 값의 노드와 원래 노드의 값을 바꾼 후
-				//원래 노드의 값이 들어간 노드의 부모 연결 해제
-				//원하는 원소가 들어있는 바꾼 노드 해제
+				//오른쪽 자식만 있을 때 지울 노드를 임시 저장한 뒤
+				//오른쪽 자식으로 이동 후 왼쪽 자식 노드가 없을
+				//때까지 왼쪽 자식 노드로 이동하면 지울 노드의
+				//키 값보다 큰 값 중 가장 작은 값을 구할 수 있다
+				//해당 값을 원래 지울 노드의 키 값으로 저장하고
+				//해제하면 트리 구조를 유지할 수 있다
 				else if (curr->left == NULL) {
 					parent = temp = curr;
 					curr = curr->right;
@@ -132,10 +139,12 @@ void deletenode(int data) {   //노드삭제
 					free(curr);
 					break;
 				}
-				//왼쪽 자식으로 이동 후 제일 큰 값의 노드와
-				//원래 노드의 값을 바꾼 후 원래 노드의 값이 
-				//들어간 노드의 부모 연결 해제
-				//원하는 원소가 들어있는 바꾼 노드 해제
+				//지울 노드를 임시 저장한 뒤 왼쪽 자식으로 
+				//이동 후 오른쪽 자식 노드가 없을 때까지 
+				//오른쪽 자식 노드로 이동하면 지울 노드의
+				//키 값보다 작은 값 중 가장 큰 값을 구할 수 있다
+				//해당 값을 원래 지울 노드의 키 값으로 저장하고
+				//해제하면 트리 구조를 유지할 수 있다
 				else {
 					parent = temp = curr;
 					curr = curr->left;
@@ -163,9 +172,9 @@ void preorder(TNODE* node) {
 			return;
 		}
 		else {
-			printf("%d ", node->data);
-			preorder(node->left);
-			preorder(node->right);
+			printf("%d ", node->data);		//root 출력
+			preorder(node->left);			//left 이동
+			preorder(node->right);			//right 이동
 		}
 	}
 }
@@ -180,9 +189,9 @@ void inorder(TNODE* node) {
 			return;
 		}
 		else {
-			inorder(node->left);
-			printf("%d ", node->data);
-			inorder(node->right);
+			inorder(node->left);			//left 이동
+			printf("%d ", node->data);		//root 출력
+			inorder(node->right);			//right 이동
 		}
 	}
 }
@@ -197,9 +206,9 @@ void postorder(TNODE* node) {
 			return;
 		}
 		else {
-			postorder(node->left);
-			postorder(node->right);
-			printf("%d ", node->data);
+			postorder(node->left);			//left 이동
+			postorder(node->right);			//right 이동
+			printf("%d ", node->data);		//root 출력
 		}
 	}
 }
