@@ -1,7 +1,7 @@
 
 /*
 #include<stdio.h>
-#define MAX_HEAP_SIZE 100		//힙 최대 크기
+#define MAX_HEAP_SIZE 100		//힙 최대 크기 선언
 
 typedef struct {				//최대 힙 구조체 정의
 	int currheapsize;
@@ -37,7 +37,7 @@ void swap(int* a, int* b) {				//값 교환
 	*b = temp;
 }
 
-void addheap(MAXHEAP* h, int data) {     //원소 값 추가
+void addheap(MAXHEAP* h, int data) {	//원소 값 추가
 	if (isfull(h)) {
 		printf("포화 힙\n");
 	}
@@ -45,7 +45,7 @@ void addheap(MAXHEAP* h, int data) {     //원소 값 추가
 		h->currheapsize++;
 		//현재 인덱스, 제일 끝 원소의 인덱스부터 시작
 		int currindex = h->currheapsize;
-		h->heap[currindex] = data;    //마지막 인덱스에 값 추가
+		h->heap[currindex] = data;			//마지막 인덱스에 값 추가
 		
 		//최대 힙 정렬 과정, 부모 값보다 자식 값이 크면 서로 교환
 		while (currindex != 1) {
@@ -60,13 +60,13 @@ void addheap(MAXHEAP* h, int data) {     //원소 값 추가
 	}
 }
 
-void deleteheap(MAXHEAP* h) {      //최대 값 원소 제거
+void deleteheap(MAXHEAP* h) {			//최대 값 원소 제거
 	if (isempty(h)) {
 		printf("공백 힙\n");
 	}
 	else {
-		if (h->currheapsize == 1) {    //원소개수가 한 개일 때
-			h->currheapsize--;         //공백상태로 전환
+		if (h->currheapsize == 1) {		//원소개수가 한 개일 때
+			h->currheapsize--;			//공백상태로 전환
 		}
 		else {
 			int curr = 1;
