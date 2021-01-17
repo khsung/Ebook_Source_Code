@@ -16,7 +16,7 @@ int main() {
 	printf("정렬 전 배열 : ");
 	printarray(array, ARRAY_SIZE);
 
-	printf("정렬 과정\n");
+	printf("\n선택 정렬 과정\n");
 	for (int i = 0; i < ARRAY_SIZE; i++) {
 		min = i;
 		for (int j = i; j < ARRAY_SIZE; j++){
