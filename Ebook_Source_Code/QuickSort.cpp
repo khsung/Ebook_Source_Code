@@ -1,7 +1,8 @@
 /*
 #include<stdio.h>
+#define ARRAY_SIZE 7
 
-void swap(int* a, int* b) {  //배열 원소 교환 함수
+void swap(int* a, int* b) {		//배열 원소 교환 함수
 	int temp;
 	temp = *a;
 	*a = *b;
@@ -22,16 +23,19 @@ void quicksort(int array[],int left,int right,int size) {
 	}
 	else {
 		int L = left, R = right, pivot = 0;
-		while (L < R) { //left와 right가 만나지 않을 때까지
+		//left와 right가 만나지 않을 때까지
+		while (L < R) {
+			//pivot보다 작으면 left를 오른쪽 이동
 			if (array[pivot] > array[L]) {
-				L++;  //pivot보다 작으면 left를 오른쪽 이동
+				L++;
 			}
+			//pivot보다 크면 right를 왼쪽 이동
 			else if(array[pivot] < array[R]){
-				R--;  //pivot보다 크면 right를 왼쪽 이동
+				R--;
 			}
+			//left인덱스와 right인덱스의 원소가
+			//각각 pivot보다 크고 작을 때 서로 교환
 			else {
-				//left인덱스와 right인덱스의 원소가
-				//각각 pivot보다 크고 작을 때 서로 교환
 				swap(&array[L], &array[R]);
 				printarray(array, size);
 			}
@@ -56,15 +60,13 @@ void quicksort(int array[],int left,int right,int size) {
 }
 
 int main(){
-	int array[7] = { 5,1,3,7,6,2,4 };
-	int arraysize = sizeof(array) / sizeof(int);
-	int left = 1, right = arraysize-1;
+	int array[ARRAY_SIZE] = { 5,1,3,7,6,2,4 };
+	int left = 1, right = ARRAY_SIZE - 1;
 	printf("정렬 전 배열 : ");
-	printarray(array, arraysize);
-	printf("\n정렬 과정\n");
-	quicksort(array, left, right, arraysize);
+	printarray(array, ARRAY_SIZE);
+	printf("\n퀵 정렬 과정\n");
+	quicksort(array, left, right, ARRAY_SIZE);
 	printf("\n정렬 된 배열 : ");
-	printarray(array, arraysize);
+	printarray(array, ARRAY_SIZE);
 }
-
 */
