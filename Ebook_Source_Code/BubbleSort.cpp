@@ -16,7 +16,7 @@ int main() {
 	printf("정렬 전 배열 : ");
 	printarray(array, ARRAY_SIZE);
 
-	printf("\n정렬 과정\n");
+	printf("\n버블 정렬 과정\n");
 	for (int i = ARRAY_SIZE - 1; i > 0; i--) {
 		for (int j = 0; j < i; j++) {
 			//왼쪽 값이 오른쪽 값보다 크면 교환
@@ -32,6 +32,5 @@ int main() {
 	printarray(array, ARRAY_SIZE);
 	printf("\n");
 }
+
 */
-
-
