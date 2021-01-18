@@ -1,6 +1,6 @@
 /*
 #include<stdio.h>
-#define ARRAY_SIZE 5
+#define ARRAY_SIZE 5					 //배열 크기 선언
 
 void printarray(int array[], int size) { //배열 출력 함수
 	for (int i = 0; i < size; i++) {
@@ -89,7 +89,7 @@ int main() {
 	int array[ARRAY_SIZE] = { 5,4,2,3,1 };
 	printf("정렬 전 배열 : ");
 	printarray(array, ARRAY_SIZE);
-	printf("\n====== 정렬 과정 ======\n");
+	printf("\n병합 정렬 과정\n");
 	mergesort(array, 0, ARRAY_SIZE - 1);
 	printf("정렬 된 배열 : ");
 	printarray(array, ARRAY_SIZE);
