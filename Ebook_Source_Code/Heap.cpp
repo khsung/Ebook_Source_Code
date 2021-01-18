@@ -79,7 +79,7 @@ void deleteheap(MAXHEAP* h) {			//최대 값 원소 제거
 				//왼쪽 자식만 있을 때
 				if (2 * curr == h->currheapsize) {
 					//자식 값이 더 크면 부모와 자식의 값을 교환
-					if (h->heap[curr] <= h->heap[2 * curr]) {
+					if (h->heap[curr] < h->heap[2 * curr]) {
 						swap(&h->heap[curr], &h->heap[2 * curr]);
 						curr = 2 * curr;
 					}
@@ -93,7 +93,7 @@ void deleteheap(MAXHEAP* h) {			//최대 값 원소 제거
 					//오른쪽 자식이 클 때
 					if (h->heap[2 * curr] < h->heap[2 * curr + 1]) {
 						//자식 값이 더 크면 부모와 자식의 값을 교환
-						if (h->heap[curr] <= h->heap[2 * curr + 1]) {
+						if (h->heap[curr] < h->heap[2 * curr + 1]) {
 							swap(&h->heap[curr], &h->heap[2 * curr + 1]);
 							curr = 2 * curr + 1;
 						}
@@ -105,7 +105,7 @@ void deleteheap(MAXHEAP* h) {			//최대 값 원소 제거
 					//왼쪽 자식이 더 크거나 같을 때
 					else {
 						//자식 값이 더 크면 부모와 자식의 값을 교환
-						if (h->heap[curr] <= h->heap[2 * curr]) {
+						if (h->heap[curr] < h->heap[2 * curr]) {
 							swap(&h->heap[curr], &h->heap[2 * curr]);
 							curr = 2 * curr;
 						}
