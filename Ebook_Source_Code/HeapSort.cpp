@@ -158,7 +158,7 @@ int main() {
 
 	//힙의 원소 삭제하면서 원소 출력
 	//최대 힙이기 때문에 자동 내림차순으로 정렬
-	printf("\n\n정렬 된 배열 : ");
+	printf("\n\n힙 정렬 된 배열 : ");
 	for (int i = 0; i < ARRAY_SIZE; i++) {
 		printf("%d ", deleteheap(&heap));
 	}
