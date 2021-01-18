@@ -1,10 +1,10 @@
 /*
 #include<stdio.h>
 #include<stdlib.h>
-#define MAX_CHESS_SIZE 14
-int count = 0;    //퀸을 놓을 수 있는 경우의 수
+#define MAX_CHESS_SIZE 14		//최대 체스판 크기
+int count = 0;					//퀸을 놓을 수 있는 경우의 수
 
-void AddAttackLine(int chess[][MAX_CHESS_SIZE],int row,int column ,int N) {
+void AddAttackLine(int chess[][MAX_CHESS_SIZE], int row, int column, int N) {
 	int r, c;
 	//퀸이 놓인 위치를 기준으로 가로, 세로 공격라인 추가
 	for (int i = 0; i < N; i++) {
@@ -88,7 +88,7 @@ void N_Queen(int chess[][MAX_CHESS_SIZE], int row, int N) {
 				//현재위치에 퀸을 놓고 공격라인 추가 
 				AddAttackLine(chess, row, i, N);
 				//다음 행으로 넘어감
-				N_Queen(chess, row+1, N);
+				N_Queen(chess, row + 1, N);
 				//해당위치의 퀸과 공격라인 삭제
 				DelAttackLine(chess, row, i, N);
 			}
@@ -107,12 +107,13 @@ void N_Queen(int chess[][MAX_CHESS_SIZE], int row, int N) {
 }
 
 int main() {
+	//체스판 초기화
 	int chess[MAX_CHESS_SIZE][MAX_CHESS_SIZE] = { 0 };
-	int num;
-	printf("Input N (0 <= N < 15): ");
-	scanf_s("%d", &num);
-	N_Queen(chess, 0, num);
-	printf("퀸을 놓을 수 있는 경우의 수 : %d", count);
+	for (int i = 0; i < 15; i++) {
+		count = 0;				//경우의 수 초기화
+		printf("N이 %d일 때 ", i);
+		N_Queen(chess, 0, i);
+		printf("퀸을 놓을 수 있는 경우의 수 : %d\n\n", count);
+	}
 }
-
 */
