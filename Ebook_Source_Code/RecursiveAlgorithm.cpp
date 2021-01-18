@@ -2,13 +2,14 @@
 #include<stdio.h>
 
 int recursive(int num) {
-	if (num == 0) {     //종료 조건
+	//종료 조건
+	if (num == 0) {
 		printf("count 종료\n");
-		return 0;
+		return num;
 	}
 	else {
 		printf("count : %d\n",num);
-		return num+recursive(num-1);
+		return num + recursive(num - 1);
 	}
 }
 
