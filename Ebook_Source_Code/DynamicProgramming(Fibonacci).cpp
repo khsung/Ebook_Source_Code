@@ -7,8 +7,8 @@ int DPcount = 0;				//동적 프로그래밍 연산 횟수
 
 //재귀 알고리즘
 int RecursiveFibonacci(int num) {
+	Recursivecount++;
 	if (num == 1 || num == 0) {
-		Recursivecount++;
 		return num;
 	}
 	else {
@@ -20,8 +20,8 @@ int RecursiveFibonacci(int num) {
 //동적 계획법 (Dynamic Programming)
 int DP[FIBONACCI_INDEX] = { 0 };   //연산 결과값 저장배열(전역 변수 선언)
 int DPFibonacci(int num) {
+	DPcount++;
 	if (num == 1 || num == 0) {
-		DPcount++;
 		DP[num] = num;
 		return DP[num];
 	}
@@ -30,14 +30,12 @@ int DPFibonacci(int num) {
 	//DP[num] > 0일 경우 연산결과가 저장되어 있단 뜻이므로
 	//배열값(연산 결과값) 리턴
 	else if (DP[num] > 0) {
-		DPcount++;
 		return DP[num];
 	}
 
 	//DP[num]에 연산 결과값이 없을 경우(0일 때)
 	//재귀를 통해 연산값 저장 후 결과 리턴
 	else {
-		DPcount++;
 		DP[num] = DPFibonacci(num - 1) + DPFibonacci(num - 2);
 		return DP[num];
 	}
@@ -53,4 +51,5 @@ int main() {
 						DPFibonacci(FIBONACCI_INDEX - 1));
 	printf("동적 프로그래밍 연산 횟수 : %d\n", DPcount);
 }
+
 */
