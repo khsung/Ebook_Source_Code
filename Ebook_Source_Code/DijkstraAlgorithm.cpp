@@ -1,6 +1,5 @@
 /*
 #include<stdio.h>
-
 #define GRAPH_SIZE 5    //그래프 크기 선언
 #define INF 999         //무한대 대체 변수선언 상황에 따라 변경
 #define STARTNODE 0     //시작노드 선언
@@ -15,8 +14,11 @@ void printarray(int array[], int arraysize) {
 
 int main() {
 	//그래프 행렬 선언
-	int graph[GRAPH_SIZE][GRAPH_SIZE] = { {0,2,8,5,INF},{2,0,INF,1,9},{8,INF,0,2,INF},
-										{5,1,2,0,4},{INF,9,INF,4,0} };
+	int graph[GRAPH_SIZE][GRAPH_SIZE] = { {0, 2, 8, 5, INF},
+										  {2, 0, INF, 1, 9},
+										  {8, INF, 0, 2, INF},
+										  {5, 1, 2, 0, 4},
+										  {INF, 9, INF, 4, 0} };
 	//경로 저장 배열 선언
 	int path[GRAPH_SIZE] = { 0 };
 	//비용 저장 배열 선언
