@@ -1,5 +1,5 @@
 
-
+/*
 #include<stdio.h>
 #define GRAPH_SIZE 5									//그래프 크기
 #define EDGE_INFO_MAX_SIZE GRAPH_SIZE*(GRAPH_SIZE-1)	//간선 최대 개수
@@ -89,6 +89,8 @@ int main() {
 		union_find[i] = i;
 		printf(" %d", union_find[i]);
 	}
+
+	//MST간선 추가
 	for (int i = 0; i < edgeinfoindex; i++) {
 		//서로 root 노드가 다르다면 부모, 자식 노드로 연결하고 MST에 간선 정보 추가
 		if (find(union_find, edgeinfo[i][0]) != find(union_find, edgeinfo[i][1])) {
@@ -101,7 +103,8 @@ int main() {
 			MST_edge[MST_edgeindex][1] = edgeinfo[i][1];
 			MST_edge[MST_edgeindex][2] = edgeinfo[i][2];
 			MST_edgeindex++;
-			printf("\n추가된 MST 간선 : {%d, %d, %d}",edgeinfo[i][0],edgeinfo[i][1],edgeinfo[i][2]);
+			printf("\n추가된 MST 간선 : {%d, %d, %d}", edgeinfo[i][0], 
+													edgeinfo[i][1], edgeinfo[i][2]);
 		}
 		//서로 root 노드가 같다면 사이클 형성되는 것으로 판단
 		else {
@@ -111,8 +114,10 @@ int main() {
 	int costsum = 0;		//비용 합 저장 변수
 	printf("\n\n최종 최소 신장 트리 간선 정보\n");
 	for (int i = 0; i < MST_edgeindex; i++) {
-		printf("노드 %d, 노드 %d 가중치 : %d\n", MST_edge[i][0], MST_edge[i][1], MST_edge[i][2]);
+		printf("노드 %d, 노드 %d 가중치 : %d\n", MST_edge[i][0], MST_edge[i][1], 
+													MST_edge[i][2]);
 		costsum += MST_edge[i][2];
 	}
 	printf("\n최종 비용 : %d", costsum);
 }
+*/
