@@ -1,4 +1,4 @@
-
+/*
 #include<stdio.h>
 #define INF 9999								//무한대 상수변수 선언
 #define GRAPH_SIZE 5							//그래프 노드 개수 선언
@@ -116,3 +116,4 @@ int main() {
 	res = bellmanford(cyclegraph, cost, edgeinfo, edgeinfosize);
 	judgecycle(res, cost);
 }
+*/

@@ -1,10 +1,10 @@
 
-/*
+
 #include<stdio.h>
-#define GRAPH_SIZE 5					//그래프 크기
-#define EDGE_INFO_MAX_SIZE GRAPH_SIZE*(GRAPH_SIZE-1)  //간선 최대 개수
-#define MST_SIZE GRAPH_SIZE-1			//최소 신장 트리 크기
-#define INF 9999						//무한대 변수 선언
+#define GRAPH_SIZE 5									//그래프 크기
+#define EDGE_INFO_MAX_SIZE GRAPH_SIZE*(GRAPH_SIZE-1)	//간선 최대 개수
+#define MST_SIZE GRAPH_SIZE-1							//최소 신장 트리 크기
+#define INF 9999										//무한대 변수 선언
 
 //가중치를 기준으로 오름차순 정렬 (버블 정렬)
 void sortedge(int edgeinfo[][3], int edgeinfoindex) {
@@ -116,4 +116,3 @@ int main() {
 	}
 	printf("\n최종 비용 : %d", costsum);
 }
-*/
