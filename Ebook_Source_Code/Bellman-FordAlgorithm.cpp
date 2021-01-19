@@ -1,4 +1,4 @@
-/*
+
 #include<stdio.h>
 #define INF 9999								//무한대 상수변수 선언
 #define GRAPH_SIZE 5							//그래프 노드 개수 선언
@@ -60,12 +60,13 @@ void judgecycle(bool result, int cost[GRAPH_SIZE]) {
 }
 
 int main() {
-	int startnode = STARTNODE;				//시작 노드 선언
+	int startnode = STARTNODE;				//시작 노드 저장
 	int graph[GRAPH_SIZE][GRAPH_SIZE] = { {0,6,4,9,INF},
 										  {-3,0,INF,1,6},
 										  {-3,INF,0,2,INF},
 										  {INF,INF,INF,0,4},
 										  {INF,2,INF,INF,0} };
+
 	int cost[GRAPH_SIZE];					//비용 배열 선언
 	initcost(cost, startnode);				//비용 배열 초기화
 	//간선 정보 배열, {시작 노드, 도착 노드, 가중치} 형태로 저장 예정
@@ -92,10 +93,10 @@ int main() {
 
 	initcost(cost, startnode);			//두 번째 그래프를 위한 비용 배열 초기화
 	int cyclegraph[GRAPH_SIZE][GRAPH_SIZE] = { {0,6,4,9,INF},
-										  {-30,0,INF,1,6},
-										  {-3,INF,0,2,INF},
-										  {INF,INF,INF,0,4},
-										  {INF,2,INF,INF,0} };
+											   {-30,0,INF,1,6},
+											   {-3,INF,0,2,INF},
+											   {INF,INF,INF,0,4},
+											   {INF,2,INF,INF,0} };
 
 	//행렬 그래프 출력하면서 각 노드별 간선 정보 저장 
 	printf("\n두 번째 그래프 행렬\n");
@@ -115,4 +116,3 @@ int main() {
 	res = bellmanford(cyclegraph, cost, edgeinfo, edgeinfosize);
 	judgecycle(res, cost);
 }
-*/
