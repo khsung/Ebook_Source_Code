@@ -62,7 +62,7 @@ void printarray(int array[], int size) {
 }
 
 int main() {
-	int array[9] = { 541,303,9,70,5,47,11,3,155 };
+	int array[ARRAY_SIZE] = { 541, 303, 9, 70, 5, 47, 11, 3, 155 };
 	int maxdigit = findmaxdigit(array, ARRAY_SIZE);
 	int currdigit = 1;
 	QUEUE queue;
