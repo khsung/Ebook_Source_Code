@@ -1,15 +1,15 @@
 /*
 #include<stdio.h>
-#define MAX_SIZE 100      //큐나 자료구조의 최대 크기
-#define GRAPH_SIZE 5      //그래프 크기
-#define START_NODE 0      //그래프의 시작 노드
+#define MAX_SIZE 100				//스택이나 큐의 최대 크기
+#define GRAPH_SIZE 5				//그래프 크기
+#define START_NODE 0				//그래프의 시작 노드
 
-typedef struct STACK {       //스택 구조체 선언
+typedef struct STACK {				//스택 구조체 선언
 	int top;
 	int stack[MAX_SIZE];
 }STACK;
 
-typedef struct QUEUE {       //큐 구조체 선언
+typedef struct QUEUE {				//큐 구조체 선언
 	int front, rear;
 	int queue[MAX_SIZE];
 }QUEUE;
@@ -26,11 +26,11 @@ void printgraph(int graph[GRAPH_SIZE][GRAPH_SIZE]) {
 	printf("\n");
 }
 
-void initstack(STACK* s) {        //스택 초기화
+void initstack(STACK* s) {			//스택 초기화
 	s->top = -1;
 }
 
-void initqueue(QUEUE* q) {        //큐 초기화
+void initqueue(QUEUE* q) {			//큐 초기화
 	q->front = 0;
 	q->rear = -1;
 }
@@ -75,7 +75,7 @@ int dequeue(QUEUE* q) {
 }
 
 //깊이 우선 탐색
-void DFS(int graph[GRAPH_SIZE][GRAPH_SIZE], bool visited[GRAPH_SIZE],int node, STACK* s) {
+void DFS(STACK* s, int graph[GRAPH_SIZE][GRAPH_SIZE], bool visited[GRAPH_SIZE],int node) {
 	int printnode;
 	printf("DFS 순서 : ");
 	//시작 노드일 때 스택에 저장
@@ -101,7 +101,7 @@ void DFS(int graph[GRAPH_SIZE][GRAPH_SIZE], bool visited[GRAPH_SIZE],int node, S
 }
 
 //너비 우선 탐색
-void BFS(int graph[GRAPH_SIZE][GRAPH_SIZE], bool visited[GRAPH_SIZE], int node, QUEUE* q) {
+void BFS(QUEUE* q, int graph[GRAPH_SIZE][GRAPH_SIZE], bool visited[GRAPH_SIZE], int node) {
 	int printnode;
 	printf("\nBFS 순서 : ");
 	//시작 노드일 때 큐에 저장
@@ -129,7 +129,10 @@ void BFS(int graph[GRAPH_SIZE][GRAPH_SIZE], bool visited[GRAPH_SIZE], int node, 
 int main() {
 	//그래프 행렬
 	int graph[GRAPH_SIZE][GRAPH_SIZE] = { {0,1,1,0,0},
-		{1,0,0,1,1},{1,0,0,1,0},{0,1,1,0,0},{0,1,0,0,0} };
+										  {1,0,0,1,1},
+										  {1,0,0,1,0},
+										  {0,1,1,0,0},
+										  {0,1,0,0,0} };
 	bool visited[GRAPH_SIZE];    //방문한 노드인지 체크하는 배열, true는 방문한 노드
 	printgraph(graph);
 	STACK Gstack;
@@ -137,8 +140,8 @@ int main() {
 	initstack(&Gstack);
 	initqueue(&Gqueue);
 	initvisited(visited);
-	DFS(graph, visited, START_NODE, &Gstack);
+	DFS(&Gstack, graph, visited, START_NODE);
 	initvisited(visited);
-	BFS(graph, visited, START_NODE, &Gqueue);
+	BFS(&Gqueue, graph, visited, START_NODE);
 }
 */
