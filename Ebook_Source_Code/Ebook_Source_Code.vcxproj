@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Array.cpp" />
     <ClCompile Include="Backtracking(findD).cpp" />
     <ClCompile Include="Backtracking(N_Queen).cpp" />
     <ClCompile Include="Bellman-FordAlgorithm.cpp" />
