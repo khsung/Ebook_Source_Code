@@ -49,7 +49,7 @@ int main() {
 		visited[startnode] = true;
 		printf("\n시작 노드 : %d\n", startnode);
 		for (int j = 0; j < GRAPH_SIZE; j++) {
-			//방문하지 않은 노드 중 비용이 더 적을 경우 비용 배열 갱신
+			//방문하지 않은 노드 중 비용이 더 적을 경우 비용과 경로 배열 갱신
 			if ((visited[j]==false)&&((cost[startnode]+graph[startnode][j])<cost[j])){
 				cost[j] = cost[startnode] + graph[startnode][j];
 				path[j] = startnode;
