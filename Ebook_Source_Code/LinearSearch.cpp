@@ -15,7 +15,7 @@ int main() {
 	scanf_s("%d", &answer);
 
 	//인덱스 0부터 차례대로 검사(선형 탐색)
-	for (int i = 0; i < sizeof(array) / sizeof(int); i++) {
+	for (int i = 0; i < ARRAY_SIZE; i++) {
 		if (array[i] == answer) {
 			printf("\n%d 검색 완료, 인덱스 : %d", array[i], i);
 			check = true;
