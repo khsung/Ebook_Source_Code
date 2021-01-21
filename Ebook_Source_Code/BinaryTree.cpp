@@ -71,7 +71,8 @@ void deletenode(int data) {   //노드삭제
 	TNODE* curr;
 	TNODE* temp;
 	curr = root;
-	if (curr == NULL) {  //루트가 비어있을 경우
+	//루트가 비어있을 경우
+	if (curr == NULL) {
 		printf("공백 이진 트리\n");
 	}
 	else {
@@ -83,7 +84,7 @@ void deletenode(int data) {   //노드삭제
 					printf("%d 에 해당하는 원소 없음\n", data);
 					break;
 				}
-				//현재 노드를 부모노드로 저장하고
+				//현재 노드를 부모 노드로 저장하고
 				//오른쪽 자식으로 이동
 				else {
 					parent = curr;
