@@ -2,14 +2,14 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+TNODE* root;				//루트노드 저장변수
+TNODE* parent;				//부모노드 저장변수
+
 typedef struct TNODE {		//트리 구조체 선언
 	char data;
 	struct TNODE* left;		//왼쪽 자식 노드
 	struct TNODE* right;	//오른쪽 자식 노드
 }TNODE;
-
-TNODE* root;				//루트노드 저장변수
-TNODE* parent;				//부모노드 저장변수
 
 void init() {				//초기화
 	root = NULL;
@@ -168,6 +168,7 @@ void preorder(TNODE* node) {
 		printf("공백 이진 트리\n");
 	}
 	else {
+		//NULL을 가리키면 종료
 		if (node == NULL) {
 			return;
 		}
