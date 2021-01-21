@@ -75,11 +75,11 @@ void findword(TRIE* trie, char word[]) {
 
 int main() {
 	TRIE* trie = (TRIE*)malloc(sizeof(TRIE));
-	char wordset[WORD_AMOUNT][MAX_WORD_LENGTH] = {"tree","trie","trim","steel","stack",
+	char wordset[WORD_AMOUNT][MAX_WORD_LENGTH] = {"tree", "trie", "trim", "steel", "stack",
 					"bind","bin"};
 	char word[MAX_WORD_LENGTH];
-
 	int tempindex;
+
 	printf("존재하는 문자열 : ");
 	for (int i = 0; i < WORD_AMOUNT; i++) {		//문자열 세트 출력
 		tempindex = 0;
@@ -91,9 +91,8 @@ int main() {
 			printf(", ");
 		else
 			printf("\n\n");
-
 	}
-		inittrie(trie);
+	inittrie(trie);
 	trietree(trie, wordset);
 	for (int i = 0; i < 3; i++) {
 		printf("찾을 문자열 입력 (최대 길이 %d) : ", MAX_WORD_LENGTH);
