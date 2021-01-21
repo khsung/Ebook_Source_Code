@@ -1,7 +1,7 @@
 /*
 #include<stdio.h>
-#define MAX_TABLE_SIZE 5
-#define DATA_SIZE 6
+#define MAX_TABLE_SIZE 5		//해시 테이블 크기 선언
+#define DATA_SIZE 6				//입력할 데이터 크기 선언
 
 int hashfunction(int k) {		//해시 함수
 	return k % MAX_TABLE_SIZE;
@@ -73,4 +73,5 @@ int main() {
 		printf("%d은 없는 원소\n", num);
 	}
 }
+
 */
