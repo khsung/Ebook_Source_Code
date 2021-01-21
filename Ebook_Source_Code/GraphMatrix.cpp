@@ -13,10 +13,11 @@ void printgraph(int array[][4],int row, int column) {
 }
 
 int main() {
-	int undirected[4][4] = { {0,1,1,0},{1,0,0,1},{1,0,0,1},{0,1,1,0} };
-	int directed[4][4] = { {0,1,1,0},{0,0,0,1},{0,0,0,1},{0,1,1,0} };
-	int weighted[4][4] = { {0,7,2,0},{7,0,0,5},{2,0,0,10},{0,5,10,0} };
+	int undirected[4][4] = { {0,1,1,0}, {1,0,0,1}, {1,0,0,1}, {0,1,1,0} };
+	int directed[4][4] = { {0,1,1,0}, {0,0,0,1}, {0,0,0,1}, {0,1,1,0} };
+	int weighted[4][4] = { {0,7,2,0}, {7,0,0,5}, {2,0,0,10}, {0,5,10,0} };
 	int row = 4, column = 4;
+
 	printf("무 방향 그래프\n\n");
 	printgraph(undirected,row,column);
 	printf("방향 그래프\n\n");
