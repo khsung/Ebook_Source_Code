@@ -1,7 +1,7 @@
 /*
 #include<stdio.h>
 #define ARRAY_SIZE 7				  //배열 크기 선언
-#define SEGMENT_SIZE ARRAY_SIZE*4	  //세그먼트 트리 크기,편의상 배열크기의 4배를 선언
+#define SEGMENT_SIZE 4*ARRAY_SIZE	  //세그먼트 트리 크기,편의상 배열크기의 4배를 선언
 
 int originarray[ARRAY_SIZE] = { 4,7,1,-3,10,-1,6 };  //구간 합을 구할 배열
 int segmenttree[SEGMENT_SIZE];                       //세그먼트 트리 구현 배열
