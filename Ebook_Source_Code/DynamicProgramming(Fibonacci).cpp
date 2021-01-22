@@ -1,4 +1,4 @@
-/*
+
 #include<stdio.h>
 #define FIBONACCI_INDEX 10		//20으로 변경해서도 실행
 
@@ -44,12 +44,11 @@ int DPFibonacci(int num) {
 int main() {
 	//index는 0부터 시작하기 때문에 FIBONACCI_INDEX - 1을 넣음
 	//1번째 : 0, 2번째 : 1, 3번째 : 1, 4번째 : 2
-	printf("재귀 알고리즘 피보나치 수열의 %d번째 숫자 : %d\n", FIBONACCI_INDEX, 
-						RecursiveFibonacci(FIBONACCI_INDEX - 1));
+	printf("재귀 알고리즘 피보나치 수열의 %d번째 숫자 : %d\n", 
+				FIBONACCI_INDEX, RecursiveFibonacci(FIBONACCI_INDEX - 1));
 	printf("재귀 알고리즘 연산 횟수 : %d\n\n", Recursivecount);
-	printf("동적 계획법 피보나치 수열의 %d번째 숫자 : %d\n", FIBONACCI_INDEX,
-						DPFibonacci(FIBONACCI_INDEX - 1));
+	printf("동적 계획법 피보나치 수열의 %d번째 숫자 : %d\n", 
+				FIBONACCI_INDEX, DPFibonacci(FIBONACCI_INDEX - 1));
 	printf("동적 프로그래밍 연산 횟수 : %d\n", DPcount);
 }
 
-*/
