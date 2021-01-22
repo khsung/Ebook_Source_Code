@@ -1,6 +1,6 @@
-/*
+
 #include<stdio.h>
-#define ARRAY_SIZE 5
+#define ARRAY_SIZE 5		//배열 크기 선언
 
 //배열 출력 함수
 void printarray(int *array, int size) {
@@ -33,4 +33,3 @@ int main() {
 	printf("\n");
 }
 
-*/
