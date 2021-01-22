@@ -1,6 +1,6 @@
 /*
 #include<stdio.h>
-#define ARRAY_SIZE 7
+#define ARRAY_SIZE 7			//배열 크기 선언
 
 void swap(int* a, int* b) {		//배열 원소 교환 함수
 	int temp;
@@ -62,6 +62,7 @@ void quicksort(int array[],int left,int right,int size) {
 int main(){
 	int array[ARRAY_SIZE] = { 5,1,3,7,6,2,4 };
 	int left = 1, right = ARRAY_SIZE - 1;
+
 	printf("정렬 전 배열 : ");
 	printarray(array, ARRAY_SIZE);
 	printf("\n퀵 정렬 과정\n");
@@ -69,4 +70,5 @@ int main(){
 	printf("\n정렬 된 배열 : ");
 	printarray(array, ARRAY_SIZE);
 }
+
 */
