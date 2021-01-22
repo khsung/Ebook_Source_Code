@@ -1,4 +1,4 @@
-
+/*
 #include<stdio.h>
 #define ARRAY_SIZE 5		//배열 크기 선언
 
@@ -32,4 +32,4 @@ int main() {
 	printarray(array, ARRAY_SIZE);
 	printf("\n");
 }
-
+*/
