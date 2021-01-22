@@ -1,4 +1,4 @@
-
+/*
 #include<stdio.h>
 #define FIBONACCI_INDEX 10		//20으로 변경해서도 실행
 
@@ -52,3 +52,4 @@ int main() {
 	printf("동적 프로그래밍 연산 횟수 : %d\n", DPcount);
 }
 
+*/
