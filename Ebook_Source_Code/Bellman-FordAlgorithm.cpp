@@ -24,7 +24,8 @@ void printcost(int cost[GRAPH_SIZE]) {
 
 //벨만 포드 알고리즘
 bool bellmanford(int graph[][GRAPH_SIZE],int cost[],int edgeinfo[][3],int edgeinfosize){
-	int curr, next, edgecost;				//현재 노드, 다음 노드, 간선의 비용
+	//현재 노드, 다음 노드, 간선의 비용
+	int curr, next, edgecost;
 	//노드 개수 만큼 반복
 	for (int i = 0; i < GRAPH_SIZE; i++) {
 		//전체 간선을 고려
